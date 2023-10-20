@@ -8,7 +8,7 @@ Here's the link to the page :
 Images used from :
 
 - [unplash](https://unsplash.com/)
-- [unplash](https://pexels.com/)
-- [unplash](https://pixabay.com/)
+- [pexels](https://pexels.com/)
+- [pixabay](https://pixabay.com/)
 
 Constructive feedback is appreciated, and i hope you like it as much as i liked making it 😄☕
