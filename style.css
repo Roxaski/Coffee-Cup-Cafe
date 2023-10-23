@@ -181,6 +181,9 @@ nav.active .hamburger-menu .bars::after {
 }
 /*Media Query's*/
 @media screen and (max-width: 876px) {
+    body {
+        overflow: hidden;
+    }
     nav.active .links {
         transform: translate(0);
     }
@@ -262,11 +265,13 @@ nav.active .hamburger-menu .bars::after {
     .contents h2 {
         width: 55%;
     }
-    .contents button {
-        margin: 1rem 0 .65rem 0;
-    }
     .img-container img {
         max-width: 45%;
+    }
+}
+@media screen and (max-width: 655px) and (orientation: landscape) {
+    .contents .btn {
+        margin-top: 1rem;
     }
 }
 /*Dark Mode*/
