@@ -149,6 +149,9 @@ nav.active .hamburger-menu .bars::after {
 }
 /*Media Query's*/
 @media screen and (max-width: 876px) {
+    .wrapper {
+        padding-bottom: 2rem;
+    }
     .no-scroll {
         position: fixed;
         overflow-y: hidden;
@@ -189,6 +192,9 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
+    .wrapper {
+        padding-bottom: 2rem;
+    }
     .no-scroll {
         position: fixed;
         overflow-y: hidden;

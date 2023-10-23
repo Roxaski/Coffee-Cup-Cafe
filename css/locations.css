@@ -148,15 +148,16 @@ table {
     letter-spacing: .5px;
     height: 100%;
     width: 100%;
-    box-shadow: 3px 4px 5px rgba(0, 0, 0, .5);
-    color: var(--clr-white);
-    background-color: var(--clr-darkBrown);
+    color: var(--clr-grey);
 }
 table thead tr th {
+    color: var(--clr-white);
+    background-color: var(--clr-darkBrown);
     font-weight: 400;
+    padding: .6rem;
 }
 table tbody tr td {
-    padding: .75rem;
+    padding: .5rem;
 }
 table tbody tr td:nth-child(even) {
     text-align: right;
@@ -242,19 +243,18 @@ table td {
     .hamburger-menu {
         display: flex;
     }
+}
+@media screen and (max-width: 968px) {
+    .locations-container .opening-times {
+        grid-column: 1 / -1;
+    }
     .locations-container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-@media screen and (max-width: 1250px) {
-    table tbody tr td:nth-child(even) {
-        text-align: right;
-        width: 30%;
-        padding: 2rem;
-    }
+@media screen and (max-width: 430px) {
     .locations-container {
         grid-template-columns: repeat(1, 1fr);
-        margin: 0 auto;
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
@@ -290,6 +290,12 @@ table td {
     .hamburger-menu {
         display: flex;
     }
+    .locations-container .opening-times {
+        grid-column: 1 / -1;
+    }
+    .locations-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 /*Dark Mode*/
 @media screen and (prefers-color-scheme: dark) {
@@ -311,6 +317,7 @@ table td {
     }
     table {
         box-shadow: none;
+        color: var(--clr-offWhite);
         border: 2px solid var(--clr-offWhite);
     }
     table tr {
