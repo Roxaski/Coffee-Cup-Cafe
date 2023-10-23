@@ -41,7 +41,6 @@ nav {
 }
 .logo a {
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
 }
 .logo a:visited {
     color: var(--clr-blk);
@@ -51,6 +50,7 @@ nav {
     width: 70px;
     height: auto;
     margin-left: 1rem;
+    -webkit-tap-highlight-color: transparent;
 }
 .logo h1 {
     color: var(--clr-blk);
