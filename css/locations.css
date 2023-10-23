@@ -256,6 +256,9 @@ table td {
     .locations-container {
         grid-template-columns: repeat(1, 1fr);
     }
+    table tbody tr td:nth-child(even) {
+        text-align: left;
+    }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
     .no-scroll {
