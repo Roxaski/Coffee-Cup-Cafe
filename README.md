@@ -3,7 +3,7 @@ Website created for a small thriving café business
 
 Here's the link to the page :
 
-[Coffee-Cup-Café Website](https://roxaski.github.io/Coffee-Cup-Cafe)
+https://roxaski.github.io/Coffee-Cup-Cafe
 
 Images used from :
 
