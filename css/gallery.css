@@ -139,15 +139,25 @@ nav.active .hamburger-menu .bars::after {
     max-width: 80rem;
     padding-bottom: 2rem;
 }
-.gallery-container {
+.gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
-.gallery-container img {
+.gallery .img-container {
+    overflow: hidden;
+}
+.gallery img {
     width: 100%;
-    height: auto;
+    height: 100%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
+    object-fit: cover;
+    object-position: center;
+    transition: 350ms ease-in-out all;
+    cursor: pointer;
+}
+.gallery img:hover {
+    transform: rotate(-5deg) scale(1.2);
 }
 /*Media Query's*/
 @media screen and (max-width: 876px) {
@@ -183,12 +193,12 @@ nav.active .hamburger-menu .bars::after {
     .hamburger-menu {
         display: flex;
     }
-    .gallery-container {
+    .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media screen and (max-width: 425px) {
-    .gallery-container {
+@media screen and (max-width: 430px) {
+    .gallery {
         grid-template-columns: repeat(1, 1fr);
     }
 }
@@ -241,10 +251,9 @@ nav.active .hamburger-menu .bars::after {
     .links ul li a {
         color: var(--clr-offWhite);
     }
-    .gallery-container img {
+    .gallery img {
         color: var(--clr-offWhite);
         box-shadow: none;
-        border: solid 2px var(--clr-offWhite);
     }
 }
 @media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {

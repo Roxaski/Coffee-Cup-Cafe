@@ -8,7 +8,7 @@
     --clr-white: #f7f4f4;
     --clr-offWhite: #dad5d5;
     --clr-blk: #212121;
-    --clr-grey: #312f2f;
+    --clr-grey: #524e4e;
     --clr-brwn: #b27526;
     --clr-darkBrown: #865340;
 }
@@ -190,9 +190,10 @@ table td {
 }
 .location .header img {
     position: absolute;
-    width: 2.5rem;
-    top: .5rem;
-    right: .75rem;
+    max-width: 2.5rem;
+    top: 15%;
+    right: 5%;
+    transform: translate(-50%, -50%);
     transform: rotate(50deg);
 }
 .location .info {

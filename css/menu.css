@@ -8,7 +8,8 @@
     --clr-white: #f7f4f4;
     --clr-offWhite: #dad5d5;
     --clr-blk: #212121;
-    --clr-grey: #312f2f;
+    --clr-grey: #524e4e;
+    --clr-lightGrey: #beb9b9;
     --clr-brwn: #b27526;
     --clr-darkBrown: #865340;
 }
@@ -160,16 +161,26 @@ nav.active .hamburger-menu .bars::after {
     align-items: center;
     text-transform: capitalize;
     justify-content: space-between;
-    padding: .5rem;
+    position: relative;
+    width: 95%;
+    margin: 10px auto;
+}
+.card .information::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    margin-top: 2.5rem;
+    border-bottom: var(--clr-lightGrey) 2px solid;
 }
 .card .information h2 {
-    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(1rem, 3vw, 1.15rem);
     font-weight: 400;
 }
 .card .about p {
     font-size: clamp(1rem, 3vw, 1rem);
     line-height: 1.4;
-    padding: .5rem;
+    width: 95%;
+    margin: 25px auto 10px;
 }
 .card i {
     font-size: 1rem;
@@ -212,7 +223,7 @@ nav.active .hamburger-menu .bars::after {
         grid-template-columns: repeat(2,1fr);
     }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 430px) {
     .grid-container {
         grid-template-columns: repeat(1,1fr);
     }
@@ -274,6 +285,9 @@ nav.active .hamburger-menu .bars::after {
         color: var(--clr-offWhite);
         background-color: var(--clr-blk);
         box-shadow: none;
+    }
+    .card .information::after {
+        border-bottom: var(--clr-offWhite) 2px solid;
     }
 }
 @media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
