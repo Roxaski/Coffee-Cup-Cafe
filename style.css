@@ -86,7 +86,7 @@ nav {
     justify-content: center;
     position: absolute;
     top: 3.5rem;
-    right: 1rem;
+    right: 2rem;
     width: 1.2rem;
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
@@ -130,7 +130,7 @@ nav.active .hamburger-menu .bars::after {
     align-items: center;
     justify-content: flex-start;
     margin: 5rem 0 0 3rem;
-    max-width: 86rem;
+    max-width: 80rem;
     color: var(--clr-grey);
 }
 .contents h1 {
@@ -226,9 +226,7 @@ nav.active .hamburger-menu .bars::after {
     .btn:hover {
         background-color: none;
     }
-    .img-container img {
-        max-width: 75%;
-    }
+
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
     nav.active .links {
