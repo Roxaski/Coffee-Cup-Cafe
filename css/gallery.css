@@ -197,6 +197,9 @@ nav.active .hamburger-menu .bars::after {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
+    .gallery img:hover {
+        transform: rotate(0) scale(1);
+    }
 }
 @media screen and (max-width: 430px) {
     .gallery {
@@ -235,6 +238,9 @@ nav.active .hamburger-menu .bars::after {
     }
     .hamburger-menu {
         display: flex;
+    }
+    .gallery img:hover {
+        transform: rotate(0) scale(1);
     }
 }
 /*Dark Mode*/
