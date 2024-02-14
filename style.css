@@ -32,13 +32,6 @@ nav {
     padding: 1rem;
     max-width: 86rem;
 }
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    right: 2rem;
-}
 .logo a {
     text-decoration: none;
 }
@@ -52,12 +45,14 @@ nav {
     margin-left: 1rem;
 }
 .logo h1 {
+    display: inline-block;
+    position: relative;
+    bottom: .5rem;
     color: var(--clr-blk);
     width: 40%;
     font-size: clamp(1.2rem, 3vw, 1.35rem);
     letter-spacing: 1px;
-    margin-top: .75rem;
-    line-height: 1;
+    line-height: 1.2;
     font-weight: 400;
 }
 .links ul {
@@ -307,6 +302,12 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 @media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
+    .logo h1 {
+        color: var(--clr-offWhite);
+    }
+    .logo a:visited {
+        color: var(--clr-offWhite);
+    }
     .links {
         color: var(--clr-offWhite);
         background-color: var(--clr-blk);
