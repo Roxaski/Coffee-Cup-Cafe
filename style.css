@@ -157,9 +157,10 @@ nav.active .hamburger-menu .bars::after {
     color: var(--clr-white);
     text-align: center;
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: uppercase;
     letter-spacing: .5px;
-    font-size: clamp(1rem, 3vw, 1.1rem);
+    font-size: clamp(1rem, 3vw, 1rem);
+    font-weight: 400;
     padding: 10px 15px;
     -webkit-tap-highlight-color: transparent;
 }
@@ -173,8 +174,7 @@ nav.active .hamburger-menu .bars::after {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 535px;
-    max-width: 100%;
+    max-width: 535px;
     opacity: 75%;
     color: var(--clr-grey);
 }
@@ -221,7 +221,16 @@ nav.active .hamburger-menu .bars::after {
     .btn:hover {
         background-color: none;
     }
-
+}
+@media screen and (max-width: 500px) {
+    .img-container img {
+        max-width: 225px;
+    }
+}
+@media screen and (max-width: 345px) {
+    .img-container img {
+        max-width: 175px;
+    }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
     nav.active .links {
@@ -266,7 +275,12 @@ nav.active .hamburger-menu .bars::after {
         width: 55%;
     }
     .img-container img {
-        max-width: 45%;
+        max-width: 375px;
+    }
+}
+@media screen and (max-width: 725px) {
+    .img-container img {
+        max-width: 275px;
     }
 }
 @media screen and (max-width: 655px) and (orientation: landscape) {
