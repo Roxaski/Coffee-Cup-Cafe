@@ -85,7 +85,7 @@ nav {
     width: 1.2rem;
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
-    z-index: 5;
+    z-index: 1;
 }
 .bars {
     position: relative;
@@ -195,7 +195,7 @@ nav.active .hamburger-menu .bars::after {
         background-color: var(--clr-white);
         transform: translateX(100%);
         transition: 350ms;
-        z-index: 5;
+        z-index: 1;
     }
     nav ul {
         flex-direction: column;
@@ -245,7 +245,7 @@ nav.active .hamburger-menu .bars::after {
         background-color: var(--clr-white);
         transform: translateX(100%);
         transition: 350ms;
-        z-index: 5;
+        z-index: 1;
     }
     nav ul {
         flex-direction: column;
