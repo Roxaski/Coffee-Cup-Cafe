@@ -147,6 +147,8 @@ table {
     height: 100%;
     width: 100%;
     color: var(--clr-grey);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .5);
+
 }
 table thead tr th {
     color: var(--clr-white);
