@@ -39,7 +39,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    max-width: 86rem;
+    max-width: 90rem;
 }
 .logo a {
     text-decoration: none;
@@ -131,7 +131,7 @@ nav.active .hamburger-menu .bars::after {
 /*Main Contents*/
 .wrapper {
     margin: 2.5rem 3rem;
-    max-width: 80rem;
+    max-width: 90rem;
     padding-bottom: 2rem;
 }
 .gallery {
