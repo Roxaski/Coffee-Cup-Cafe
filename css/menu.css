@@ -276,13 +276,13 @@ nav.active .hamburger-menu .bars::after {
         color: var(--clr-offWhite);
     }
     .card {
-        border: solid 2px var(--clr-offWhite);
+        border: solid 2px var(--clr-grey);
         color: var(--clr-offWhite);
         background-color: var(--clr-blk);
         box-shadow: none;
     }
     .card .information::after {
-        border-bottom: var(--clr-offWhite) 2px solid;
+        border-bottom: var(--clr-grey) 2px solid;
     }
 }
 @media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {

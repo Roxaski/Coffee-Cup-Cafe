@@ -160,7 +160,8 @@ nav.active .hamburger-menu .bars::after {
     letter-spacing: .5px;
     font-size: clamp(1rem, 3vw, 1.25rem);
     font-weight: 400;
-    padding: 10px 15px;
+    padding: 10px 5px;
+    line-height: 1.5;
     -webkit-tap-highlight-color: transparent;
 }
 .btn:hover {

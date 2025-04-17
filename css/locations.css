@@ -321,7 +321,6 @@ table td {
     table {
         box-shadow: none;
         color: var(--clr-offWhite);
-        border: 2px solid var(--clr-offWhite);
     }
     table tr {
         border: 2px solid var(--clr-grey);
