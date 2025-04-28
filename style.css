@@ -165,10 +165,7 @@ nav.active .hamburger-menu .bars::after {
     -webkit-tap-highlight-color: transparent;
 }
 .btn:hover {
-    background-color: var(--clr-lightGrey);
-}
-.btn a:visited {
-    color: var(--clr-white);
+    background-color: var(--clr-blk);
 }
 .img-container img {
     position: absolute;
