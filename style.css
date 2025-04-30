@@ -158,7 +158,8 @@ nav.active .hamburger-menu .bars::after {
     text-decoration: none;
     text-transform: capitalize;
     letter-spacing: .5px;
-    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1rem, 3vw, 1.1rem);
     font-weight: 400;
     padding: 10px 5px;
     line-height: 1.5;

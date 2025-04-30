@@ -149,7 +149,6 @@ nav.active .hamburger-menu .bars::after {
     object-fit: cover;
     object-position: center;
     transition: 350ms ease-in-out all;
-    cursor: pointer;
 }
 .gallery img:hover {
     transform: rotate(-5deg) scale(1.2);
