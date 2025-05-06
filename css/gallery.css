@@ -272,6 +272,14 @@ nav.active .hamburger-menu .bars::after {
         display: flex;
     }
 }
+@media screen and (orientation: landscape) and (max-width: 960px) {
+    .lightbox {
+        width: 80%;
+    }
+    .lightbox .btn i {
+        display: none;
+    }
+}
 /*Dark Mode*/
 @media screen and (prefers-color-scheme: dark) {
     ::-webkit-scrollbar-thumb {
