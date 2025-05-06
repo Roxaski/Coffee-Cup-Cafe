@@ -139,19 +139,54 @@ nav.active .hamburger-menu .bars::after {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
-.gallery .img-container {
-    overflow: hidden;
-}
 .gallery img {
     width: 100%;
     height: 100%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
-    object-fit: cover;
-    object-position: center;
-    transition: 350ms ease-in-out all;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+    color: var(--clr-blk);
+    cursor: pointer;
 }
-.gallery img:hover {
-    transform: rotate(-5deg) scale(1.2);
+.lightbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+    z-index: 3;
+}
+.lightbox img {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+.lightbox img.active {
+    display: block;
+}
+.lightbox .btn {
+    display: none;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: var(--clr-white);
+    cursor: pointer;
+}
+.lightbox .previous {
+    left: -4rem;
+}
+.lightbox .next {
+    right: -4rem;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-blk);
+    z-index: 2;
 }
 /*Media Query's*/
 @media screen and (max-width: 876px) {
@@ -190,8 +225,12 @@ nav.active .hamburger-menu .bars::after {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
-    .gallery img:hover {
-        transform: rotate(0) scale(1);
+    .lightbox img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .lightbox .btn i {
+        display: none;
     }
 }
 @media screen and (max-width: 430px) {
@@ -231,9 +270,6 @@ nav.active .hamburger-menu .bars::after {
     }
     .hamburger-menu {
         display: flex;
-    }
-    .gallery img:hover {
-        transform: rotate(0) scale(1);
     }
 }
 /*Dark Mode*/
