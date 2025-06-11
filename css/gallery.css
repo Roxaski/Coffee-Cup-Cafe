@@ -222,9 +222,6 @@ nav.active .hamburger-menu .bars::after {
     .hamburger-menu {
         display: flex;
     }
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
     .lightbox img {
         max-width: 90%;
         margin: 0 auto;
