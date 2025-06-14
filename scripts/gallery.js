@@ -17,6 +17,7 @@ gallery.forEach((img, index) => {
         imagePreview();
     });
 
+    // opens the selected image when pressing enter on keyboard
     img.addEventListener('keydown', (e) => {
         if(e.key === 'Enter') {
             currentImage = index;
