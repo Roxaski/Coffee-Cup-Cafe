@@ -16,6 +16,15 @@ gallery.forEach((img, index) => {
         displayOverlay();
         imagePreview();
     });
+
+    img.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter') {
+            currentImage = index;
+
+            displayOverlay();
+            imagePreview();
+        };
+    });
 });
 
 // displays an overlay
