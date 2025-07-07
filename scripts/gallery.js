@@ -4,7 +4,7 @@ const previousBtn = document.querySelector('.previous');
 const nextBtn = document.querySelector('.next');
 const overlay = document.querySelector('.overlay');
 
-// stores the value of the selected image
+// Stores the index of the currently displayed image
 let currentImage;
 
 // loop through each image in the gallery
@@ -15,6 +15,8 @@ gallery.forEach((img, index) => {
 
         displayOverlay();
         imagePreview();
+        preload(currentImage +1);
+        preload(currentImage -1);
     });
 
     // opens the selected image when pressing enter on keyboard
@@ -24,9 +26,20 @@ gallery.forEach((img, index) => {
 
             displayOverlay();
             imagePreview();
+            preload(currentImage +1);
+            preload(currentImage -1);
         };
     });
 });
+
+// preloads the previous and next image
+function preload(imageIndex) {
+    // checks if the image is within the length of the gallery 
+    if (imageIndex >= 0 && imageIndex < gallery.length) {
+        // creates a new image element, whose source is equal to that of the gallery position, + or - 1 when called
+        new Image().src = gallery[imageIndex].src;
+    };
+};
 
 // displays an overlay
 function displayOverlay() {
@@ -61,12 +74,14 @@ function displayGalleryBtns() {
 nextBtn.addEventListener('click', () => {
     currentImage ++;
     imagePreview();
+    preload(currentImage +1);
 });
 
 // displays previous image
 previousBtn.addEventListener('click', () => {
     currentImage --;
     imagePreview();
+    preload(currentImage -1);
 });
 
 // removes overlay, image and buttons
@@ -101,21 +116,25 @@ lightbox.addEventListener('touchend', (e) => {
     if(swipeToChangeImg > minSwipe && currentImage < gallery.length - 1) {
         currentImage ++;
         imagePreview();
+        preload(currentImage +1);
 
     } else if (swipeToChangeImg < -minSwipe && currentImage > 0) {
         currentImage --;
         imagePreview();
+        preload(currentImage -1);
     };
 });
 
-// displaying images using the arrow keys
+// image navigation using the arrows keys
 window.addEventListener('keydown', (e) => {
     if(overlay.style.display == 'block' && e.key == 'ArrowRight' &&  currentImage < gallery.length - 1) {
         currentImage ++;
         imagePreview();
-    } else if (e.key == 'ArrowLeft' && currentImage > 0) {
+        preload(currentImage +1);
+    } else if (overlay.style.display == 'block' && e.key == 'ArrowLeft' && currentImage > 0) {
         currentImage --;
         imagePreview();
+        preload(currentImage -1);
     } else if (e.key == 'Escape') {
         closeOverlay();
     };
