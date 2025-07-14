@@ -1,3 +1,11 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/josefin-sans-v33-latin-regular.woff2') format('woff2');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -232,25 +240,6 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 /*Dark Mode*/
-@media screen and (prefers-color-scheme: dark) {
-    body {
-        background: var(--clr-blk);
-    }
-    .wrapper,
-    .logo a:visited,
-    .logo img,
-    .logo h1,
-    .links ul li a {
-        color: var(--clr-offWhite);
-    }
-    .about p {
-        color: var(--clr-offWhite);
-    }
-    .img-container img {
-        color: var(--clr-offWhite);
-        box-shadow: none;
-    }
-}
 @media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
     .logo h1 {
         color: var(--clr-offWhite);
@@ -269,5 +258,24 @@ nav.active .hamburger-menu .bars::after {
     .bars::before,
     .bars::after {
         background-color: var(--clr-offWhite);
+    }
+}
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background: var(--clr-blk);
+    }
+    .wrapper,
+    .logo a:visited,
+    .logo img,
+    .logo h1,
+    .links ul li a {
+        color: var(--clr-offWhite);
+    }
+    .about p {
+        color: var(--clr-offWhite);
+    }
+    .img-container img {
+        color: var(--clr-offWhite);
+        box-shadow: none;
     }
 }

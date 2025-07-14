@@ -1,3 +1,18 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/josefin-sans-v33-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/poppins-v23-latin-regular.woff2') format('woff2');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -293,6 +308,26 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 /*Dark Mode*/
+@media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
+    .logo h1 {
+        color: var(--clr-offWhite);
+    }
+    .logo a:visited {
+        color: var(--clr-offWhite);
+    }
+    .links {
+        color: var(--clr-offWhite);
+        background-color: var(--clr-blk);
+    }
+    .links ul li a {
+        color: var(--clr-offWhite);
+    }
+    .bars,
+    .bars::before,
+    .bars::after {
+        background-color: var(--clr-offWhite);
+    }
+}
 @media screen and (prefers-color-scheme: dark) {
     body {
         background: var(--clr-blk);
@@ -317,25 +352,5 @@ nav.active .hamburger-menu .bars::after {
     .img-container img {
         color: var(--clr-blk);
         filter: invert(1);
-    }
-}
-@media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
-    .logo h1 {
-        color: var(--clr-offWhite);
-    }
-    .logo a:visited {
-        color: var(--clr-offWhite);
-    }
-    .links {
-        color: var(--clr-offWhite);
-        background-color: var(--clr-blk);
-    }
-    .links ul li a {
-        color: var(--clr-offWhite);
-    }
-    .bars,
-    .bars::before,
-    .bars::after {
-        background-color: var(--clr-offWhite);
     }
 }
