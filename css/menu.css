@@ -62,7 +62,7 @@ nav {
     height: auto;
     margin-left: 1rem;
 }
-.logo h1 {
+.logo h2 {
     display: inline-block;
     position: relative;
     bottom: .5rem;
@@ -267,7 +267,7 @@ nav.active .hamburger-menu .bars::after {
 }
 /*Dark Mode*/
 @media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
-    .logo h1 {
+    .logo h2 {
         color: var(--clr-offWhite);
     }
     .logo a:visited {
@@ -296,11 +296,8 @@ nav.active .hamburger-menu .bars::after {
     .wrapper,
     .logo a:visited,
     .logo img,
-    .logo h1,
+    .logo h2,
     .links ul li a {
-        color: var(--clr-offWhite);
-    }
-    .title h1 {
         color: var(--clr-offWhite);
     }
     .card {
