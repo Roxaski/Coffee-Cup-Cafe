@@ -58,7 +58,15 @@
                 </div>
             </div>
             <div class="img-container">
-                <img fetchpriority="high" draggable="false" src="./assets/index/main-graphic.webp" alt="coffee cup and coffee grinder graphic">
+                <img fetchpriority="high" draggable="false" 
+                src="./assets/index/graphic_large.webp"
+                srcset="./assets/index/graphic_small.webp 480w,
+                        ./assets/index/graphic_medium.webp 800w,
+                        ./assets/index/graphic_large.webp 1920w"
+                sizes="(max-width: 445px) 350px,
+                       (max-width: 725px) 450px,
+                       535px"
+                alt="coffee cup and coffee grinder graphic">
             </div>
         </div>
     </main>
