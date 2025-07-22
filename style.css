@@ -162,7 +162,7 @@ nav.active .hamburger-menu .bars::after {
     display: inline-block;
     margin-top: 1.75rem;
     background: var(--clr-darkBrown);
-    box-shadow: 2px 1px 4px rgba(0, 0, 0, .7);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
     padding: 10px 5px;
     border-radius: 10px;
     transition: ease-in-out 250ms;

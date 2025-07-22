@@ -5,6 +5,13 @@
   font-weight: 400;
   src: url('../assets/fonts/josefin-sans-v33-latin-regular.woff2') format('woff2');
 }
+@font-face {
+  font-display: swap;
+  font-family: 'Fredericka the Great';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/fredericka-the-great-v22-latin-regular.woff2') format('woff2');
+}
 
 * {
     margin: 0;
@@ -152,7 +159,7 @@ nav.active .hamburger-menu .bars::after {
 .card {
     border: solid 3px var(--clr-offWhite);
     background-color: var(--clr-white);
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
 }
 .card img {
     width: 100%;

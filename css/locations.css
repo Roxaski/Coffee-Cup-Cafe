@@ -168,7 +168,7 @@ table {
     height: 100%;
     width: 100%;
     color: var(--clr-grey);
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, .5);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
 }
 table thead tr th {
     color: var(--clr-white);
@@ -190,7 +190,7 @@ table td {
     padding: .35rem .95rem;
 }
 .location {
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, .5);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
 }
 .location .header {
     position: relative;
