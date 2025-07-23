@@ -137,8 +137,7 @@ nav.active .hamburger-menu .bars::after {
 }
 .about {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
     width: 90%;
 }
@@ -196,7 +195,7 @@ nav.active .hamburger-menu .bars::after {
         width: 100%;
     }
 }
-@media screen and (max-width: 1180px) and (orientation: landscape) {
+@media screen and (max-width: 1250px) and (orientation: landscape) {
     .wrapper {
         padding-bottom: 2rem;
     }
@@ -240,7 +239,7 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 /*Dark Mode*/
-@media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
+@media screen and (max-width: 1250px) and (prefers-color-scheme: dark) {
     .logo h2 {
         color: var(--clr-offWhite);
     }
