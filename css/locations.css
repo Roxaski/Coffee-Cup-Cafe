@@ -222,16 +222,18 @@ table td {
 }
 .location .info img {
     width: 100%;
-    height: auto;
+    height: 165px;
+    object-fit: cover;
 }
 .location .info p {
     width: 97%;
     padding: .35rem .5rem;
     font-weight: 400;
     letter-spacing: .5px;
+    line-height: 1.5;
 }
 /*Media Query's*/
-@media screen and (max-width: 876px) {
+@media screen and (max-width: 1175px) {
     .no-scroll {
         position: fixed;
         overflow-y: hidden;
@@ -273,7 +275,7 @@ table td {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 620px) {
     .locations-container {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -281,67 +283,12 @@ table td {
         text-align: left;
     }
 }
-@media screen and (max-width: 1180px) and (orientation: landscape) {
-    .no-scroll {
-        position: fixed;
-        overflow-y: hidden;
-    }
-    nav.active .links {
-        transform: translate(0);
-    }
-    .links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        inset: 0;
-        background-color: var(--clr-white);
-        transform: translateX(100%);
-        transition: 350ms;
-        z-index: 1;
-    }
-    nav ul {
-        flex-direction: column;
-    }
-    nav ul li {
-        position: relative;
-        bottom: .5rem;
-        padding-top: 1.75rem;
-    }
-    .links ul li a {
-        color: var(--clr-blk);
-    }
-    .hamburger-menu {
-        display: flex;
-    }
-    .locations-container .opening-times {
-        grid-column: 1 / -1;
-    }
+@media screen and (max-width: 1175px) and (orientation: landscape) {
     .locations-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 /*Dark Mode*/
-@media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
-    .logo h2 {
-        color: var(--clr-offWhite);
-    }
-    .logo a:visited {
-        color: var(--clr-offWhite);
-    }
-    .links {
-        color: var(--clr-offWhite);
-        background-color: var(--clr-blk);
-    }
-    .links ul li a {
-        color: var(--clr-offWhite);
-    }
-    .bars,
-    .bars::before,
-    .bars::after {
-        background-color: var(--clr-offWhite);
-    }
-}
 @media screen and (prefers-color-scheme: dark) {
     ::-webkit-scrollbar-thumb {
         background-color: var(--clr-offWhite);
@@ -350,11 +297,19 @@ table td {
         background: var(--clr-blk);
     }
     .wrapper,
-    .logo a:visited,
     .logo img,
     .logo h2,
     .links ul li a {
         color: var(--clr-offWhite);
+    }
+    .links {
+        color: var(--clr-offWhite);
+        background-color: var(--clr-blk);
+    }
+    .bars,
+    .bars::before,
+    .bars::after {
+        background-color: var(--clr-offWhite);
     }
     .opening-times {
         color: var(--clr-offWhite);
