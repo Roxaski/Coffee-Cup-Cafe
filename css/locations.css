@@ -268,6 +268,12 @@ table td {
     }
 }
 @media screen and (max-width: 968px) {
+    table thead tr th {
+        padding: .9rem;
+    }
+    table tbody tr td {
+        padding: 1rem;
+    }
     .locations-container .opening-times {
         grid-column: 1 / -1;
     }
@@ -280,7 +286,15 @@ table td {
         grid-template-columns: repeat(1, 1fr);
     }
     table tbody tr td:nth-child(even) {
-        text-align: left;
+        line-height: 1.8;
+    }
+}
+@media screen and (max-width: 385px) {
+    table tbody tr td {
+        width: 50%;
+    }
+    table tbody tr td span {
+        display: none;
     }
 }
 @media screen and (max-width: 1175px) and (orientation: landscape) {
