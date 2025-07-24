@@ -199,10 +199,10 @@ nav.active .hamburger-menu .bars::after {
 .card .information {
     display: flex;
     align-items: center;
-    text-transform: capitalize;
     justify-content: space-between;
     position: relative;
     width: 95%;
+    text-transform: capitalize;
     margin: 10px auto;
 }
 .card .information::after {
@@ -216,7 +216,10 @@ nav.active .hamburger-menu .bars::after {
     font-size: clamp(1rem, 3vw, 1.15rem);
     font-weight: 400;
 }
-.card .about p {
+.card .information p {
+    font-size: clamp(1rem, 3vw, 1rem);
+}
+.card .description p {
     font-size: clamp(1rem, 3vw, 1rem);
     line-height: 1.4;
     width: 95%;
@@ -224,6 +227,7 @@ nav.active .hamburger-menu .bars::after {
 }
 .card i {
     font-size: 1rem;
+    margin-left: .25rem;
 }
 /* Media Query's */
 @media screen and (max-width: 1175px) {
