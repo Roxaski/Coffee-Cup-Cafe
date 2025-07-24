@@ -55,7 +55,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     cursor: default;
 }
-/*Navbar*/
+/* Nav */
 nav {
     display: flex;
     align-items: center;
@@ -150,7 +150,7 @@ nav.active .hamburger-menu .bars::before {
 nav.active .hamburger-menu .bars::after {
     transform: translateY(0) rotate(45deg);
 }
-/*Main Contents*/
+/* Opening Times & Locations */
 .wrapper {
     margin: 2.5rem 3rem;
     max-width: 90rem;
@@ -232,7 +232,7 @@ table td {
     letter-spacing: .5px;
     line-height: 1.5;
 }
-/*Media Query's*/
+/* Media Query's */
 @media screen and (max-width: 1175px) {
     .no-scroll {
         position: fixed;

@@ -38,7 +38,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     cursor: default;
 }
-/*Navbar*/
+/* Nav */
 nav {
     display: flex;
     align-items: center;
@@ -133,7 +133,7 @@ nav.active .hamburger-menu .bars::before {
 nav.active .hamburger-menu .bars::after {
     transform: translateY(0) rotate(45deg);
 }
-/*Main Contents*/
+/* Main Content */
 .wrapper {
     display: flex;
     align-items: center;
@@ -191,7 +191,7 @@ nav.active .hamburger-menu .bars::after {
     opacity: 75%;
     color: var(--clr-grey);
 }
-/*Media Query's*/
+/* Media Query's */
 @media screen and (max-width: 1175px) {
     body {
         overflow: hidden;
@@ -281,7 +281,7 @@ nav.active .hamburger-menu .bars::after {
         margin-top: 1rem;
     }
 }
-/*Dark Mode*/
+/* Dark Mode */
 @media screen and (prefers-color-scheme: dark) {
     body {
         background: var(--clr-blk);
