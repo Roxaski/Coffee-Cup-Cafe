@@ -161,7 +161,7 @@ nav.active .hamburger-menu .bars::after {
     transform: translate(-50%, -50%);
     height: auto;
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     z-index: 3;
 }
 .lightbox img {
@@ -230,6 +230,8 @@ nav.active .hamburger-menu .bars::after {
     .hamburger-menu {
         display: flex;
     }
+}
+@media screen and (max-width: 876px) {
     .lightbox img {
         max-width: 90%;
         margin: 0 auto;
@@ -238,16 +240,9 @@ nav.active .hamburger-menu .bars::after {
         display: none;
     }
 }
-@media screen and (max-width: 876px) {
-    .hamburger-menu {
-        display: flex;
-    }
-    .lightbox img {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    .lightbox .btn i {
-        display: none;
+@media screen and (max-width: 765px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media screen and (max-width: 430px) {
