@@ -152,7 +152,7 @@ nav.active .hamburger-menu .bars::after {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
 }
 /*Media Query's*/
-@media screen and (max-width: 876px) {
+@media screen and (max-width: 1175px) {
     .wrapper {
         padding-bottom: 2rem;
     }
@@ -187,50 +187,9 @@ nav.active .hamburger-menu .bars::after {
     }
     .hamburger-menu {
         display: flex;
-    }
-    .grid-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .about {
-        width: 100%;
     }
 }
-@media screen and (max-width: 1250px) and (orientation: landscape) {
-    .wrapper {
-        padding-bottom: 2rem;
-    }
-    .no-scroll {
-        position: fixed;
-        overflow-y: hidden;
-    }
-    nav.active .links {
-        transform: translate(0);
-    }
-    .links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        inset: 0;
-        background-color: var(--clr-white);
-        transform: translateX(100%);
-        transition: 350ms;
-        z-index: 1;
-    }
-    nav ul {
-        flex-direction: column;
-    }
-    nav ul li {
-        position: relative;
-        bottom: .5rem;
-        padding-top: 1.75rem;
-    }
-    .links ul li a {
-        color: var(--clr-blk);
-    }
-    .hamburger-menu {
-        display: flex;
-    }
+@media screen and (max-width: 876px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -239,36 +198,24 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 /*Dark Mode*/
-@media screen and (max-width: 1250px) and (prefers-color-scheme: dark) {
-    .logo h2 {
-        color: var(--clr-offWhite);
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background: var(--clr-blk);
     }
-    .logo a:visited {
+    .wrapper,
+    .logo img,
+    .logo h2,
+    .links ul li a {
         color: var(--clr-offWhite);
     }
     .links {
         color: var(--clr-offWhite);
         background-color: var(--clr-blk);
     }
-    .links ul li a {
-        color: var(--clr-offWhite);
-    }
     .bars,
     .bars::before,
     .bars::after {
         background-color: var(--clr-offWhite);
-    }
-}
-@media screen and (prefers-color-scheme: dark) {
-    body {
-        background: var(--clr-blk);
-    }
-    .wrapper,
-    .logo a:visited,
-    .logo img,
-    .logo h2,
-    .links ul li a {
-        color: var(--clr-offWhite);
     }
     .about p {
         color: var(--clr-offWhite);

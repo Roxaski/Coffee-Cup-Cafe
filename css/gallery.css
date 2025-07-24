@@ -197,7 +197,7 @@ nav.active .hamburger-menu .bars::after {
     z-index: 2;
 }
 /*Media Query's*/
-@media screen and (max-width: 876px) {
+@media screen and (max-width: 1175px) {
     .no-scroll {
         position: fixed;
         overflow-y: hidden;
@@ -238,43 +238,21 @@ nav.active .hamburger-menu .bars::after {
         display: none;
     }
 }
+@media screen and (max-width: 876px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    .lightbox img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .lightbox .btn i {
+        display: none;
+    }
+}
 @media screen and (max-width: 430px) {
     .gallery {
         grid-template-columns: repeat(1, 1fr);
-    }
-}
-@media screen and (max-width: 1180px) and (orientation: landscape) {
-    .no-scroll {
-        position: fixed;
-        overflow-y: hidden;
-    }
-    nav.active .links {
-        transform: translate(0);
-    }
-    .links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        inset: 0;
-        background-color: var(--clr-white);
-        transform: translateX(100%);
-        transition: 350ms;
-        z-index: 1;
-    }
-    nav ul {
-        flex-direction: column;
-    }
-    nav ul li {
-        position: relative;
-        bottom: .5rem;
-        padding-top: 1.75rem;
-    }
-    .links ul li a {
-        color: var(--clr-blk);
-    }
-    .hamburger-menu {
-        display: flex;
     }
 }
 @media screen and (orientation: landscape) and (max-width: 960px) {
@@ -283,26 +261,6 @@ nav.active .hamburger-menu .bars::after {
     }
     .lightbox .btn i {
         display: none;
-    }
-}
-@media screen and (max-width: 1180px) and (prefers-color-scheme: dark) {
-    .logo h2 {
-        color: var(--clr-offWhite);
-    }
-    .logo a:visited {
-        color: var(--clr-offWhite);
-    }
-    .links {
-        color: var(--clr-offWhite);
-        background-color: var(--clr-blk);
-    }
-    .links ul li a {
-        color: var(--clr-offWhite);
-    }
-    .bars,
-    .bars::before,
-    .bars::after {
-        background-color: var(--clr-offWhite);
     }
 }
 /*Dark Mode*/
@@ -314,11 +272,19 @@ nav.active .hamburger-menu .bars::after {
         background: var(--clr-blk);
     }
     .wrapper,
-    .logo a:visited,
     .logo img,
     .logo h2,
     .links ul li a {
         color: var(--clr-offWhite);
+    }
+    .links {
+        color: var(--clr-offWhite);
+        background-color: var(--clr-blk);
+    }
+    .bars,
+    .bars::before,
+    .bars::after {
+        background-color: var(--clr-offWhite);
     }
     .gallery img {
         color: var(--clr-offWhite);
