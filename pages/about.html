@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Cup Café | Serving Exceptional coffee since 1982</title>
+    <title>Coffee Cup Café | Read about Ryan's story & our business journey</title>
     <meta name="description" content="Meet Ryan, owner of Coffee Cup Café. Learn about our story from Brighton's coffee scene to opening cozy cafés across the UK since 1982">
     <meta name="theme-color" content="#865340" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)">
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="Coffee Cup Café"/>
-    <meta property="og:title" content="Coffee Cup Café | About">
+    <meta property="og:title" content="Coffee Cup Café | Read about Ryan's story & our business journey">
     <meta property="og:description" content="Meet Ryan, owner of Coffee Cup Café. Learn about our story from Brighton's coffee scene to opening cozy cafés across the UK since 1982">
     <meta property="og:image" content="https://raw.githubusercontent.com/Roxaski/Coffee-Cup-Cafe/main/assets/open_graph/og_about.jpg">
     <meta property="og:image:alt" content="Coffee Cup Café About">
@@ -25,7 +25,7 @@
     <script defer src="../script.js"></script>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Nav -->
     <header>
         <nav>
             <div class="logo">
@@ -57,7 +57,15 @@
                     <p>I followed my dreams and here we are, i've been quite thankful and have managed to open a few different café's all over the country, i hope that you enjoy our cozy corners of the world as much as we all do.</p>
                 </div>
                 <div class="img-container">
-                    <img fetchpriority="high" width="1920" height="1080" draggable="false" src="../assets/about/about_extra_large.webp" alt="profile picture">
+                    <img fetchpriority="high" draggable="false" 
+                    src="../assets/about/about_extra_large.webp"
+                    srcset="../assets/about/about_small.webp 480w,
+                            ../assets/about/about_medium.webp 800w,
+                            ../assets/about/about_large.webp 1200w,
+                            ../assets/about/about_extra_large.webp 1920w"
+                    sizes="(max-width: 876px) calc(100vw - 6rem),
+                           calc(50vw - 3rem)"
+                    alt="profile picture">
                 </div>
             </div>
         </div>
