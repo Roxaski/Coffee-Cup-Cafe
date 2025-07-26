@@ -147,12 +147,20 @@ nav.active .hamburger-menu .bars::after {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
+.gallery .img-container {
+    overflow: hidden;
+}
 .gallery img {
+    display: block;
     width: 100%;
     height: 100%;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
     color: var(--clr-blk);
+    transition: 300ms ease-in;
     cursor: pointer;
+}
+.gallery img:hover {
+    transform: scale(1.1) rotate(4deg);
 }
 .lightbox {
     position: fixed;
@@ -229,6 +237,9 @@ nav.active .hamburger-menu .bars::after {
     }
     .hamburger-menu {
         display: flex;
+    }
+    .gallery img:hover {
+        transform: none;
     }
 }
 @media screen and (max-width: 876px) {
