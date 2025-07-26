@@ -272,7 +272,7 @@ table td {
         padding: .9rem;
     }
     table tbody tr td {
-        padding: 1rem;
+        padding: .5rem;
     }
     .locations-container .opening-times {
         grid-column: 1 / -1;
@@ -297,7 +297,7 @@ table td {
         display: none;
     }
 }
-@media screen and (max-width: 1175px) and (orientation: landscape) {
+@media screen and (max-width: 1250px) and (orientation: landscape) {
     .locations-container {
         grid-template-columns: repeat(2, 1fr);
     }
