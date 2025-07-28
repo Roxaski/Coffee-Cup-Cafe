@@ -149,12 +149,12 @@ nav.active .hamburger-menu .bars::after {
 }
 .gallery .img-container {
     overflow: hidden;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
 }
 .gallery img {
     display: block;
     width: 100%;
     height: 100%;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
     color: var(--clr-blk);
     transition: 300ms ease-in;
     cursor: pointer;
