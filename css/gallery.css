@@ -244,7 +244,7 @@ nav.active .hamburger-menu .bars::after {
 }
 @media screen and (max-width: 876px) {
     .lightbox img {
-        max-width: 90%;
+        max-width: 90vw;
         margin: 0 auto;
     }
     .lightbox .btn i {
