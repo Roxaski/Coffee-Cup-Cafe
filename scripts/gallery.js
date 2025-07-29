@@ -68,32 +68,6 @@ function imagePreview() {
     displayGalleryBtns();
 };
 
-// stores the value of the timeout ID which is used to delay the resize from triggering too often
-let timeoutID;
-
-window.addEventListener('resize', () => {
-    clearTimeout(timeoutID);
-    
-    if(overlay.style.display == 'block') {
-        const contentWrapper = document.querySelector('.content-wrapper');
-        const footer = document.querySelector('footer');
-        
-        // add active class to hide gallery content during resize
-        contentWrapper.classList.add('active');
-        footer.classList.add('active');
-        
-        timeoutID = setTimeout(() => {
-            // re-render image then show content after a short delay
-            imagePreview();
-            
-            setTimeout(() => {
-                contentWrapper.classList.remove('active');
-                footer.classList.remove('active');
-            }, 50);
-        }, 150);
-    }
-});
-
 // removes the buttons from the first and last lightbox images
 function displayGalleryBtns() {
     if(currentImage == 0) {
