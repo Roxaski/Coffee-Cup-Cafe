@@ -152,6 +152,14 @@ nav.active .hamburger-menu .bars::after {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
 }
 /* Media Query's */
+@media screen and (max-width: 1215px) {
+.grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .about {
+        width: 100%;
+    }
+}
 @media screen and (max-width: 1175px) {
     .wrapper {
         padding-bottom: 2rem;
@@ -187,14 +195,6 @@ nav.active .hamburger-menu .bars::after {
     }
     .hamburger-menu {
         display: flex;
-    }
-}
-@media screen and (max-width: 876px) {
-    .grid-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .about {
-        width: 100%;
     }
 }
 /* Dark Mode */

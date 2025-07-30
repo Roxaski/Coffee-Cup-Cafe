@@ -154,7 +154,7 @@ nav.active .hamburger-menu .bars::after {
 }
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: .75rem;
 }
 .grid-container .title {
@@ -264,17 +264,25 @@ nav.active .hamburger-menu .bars::after {
         display: flex;
     }
 }
-@media screen and (max-width: 876px) {
+@media screen and (max-width: 990px) {
     .grid-container {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-container .title {
+        grid-column: span 3;
+    }
+}
+@media screen and (max-width: 765px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
     }
     .grid-container .title {
         grid-column: span 2;
     }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 540px) {
     .grid-container {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     .grid-container .title {
         grid-column: span 1;
