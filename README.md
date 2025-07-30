@@ -1,6 +1,6 @@
 # Coffee-Cup-Cafe
 
-![coffee_cup](https://github.com/user-attachments/assets/5e794243-42f7-4d01-b34f-8f6a7cd68adc)
+<img width="1920" height="1080" alt="github_read me" src="https://github.com/user-attachments/assets/a98129a2-13b1-478a-85ec-310ba0009bfe" />
 
 ## Welcome to Coffee Cup Café
 
