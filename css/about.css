@@ -47,7 +47,7 @@ nav {
 .logo img {
     color: var(--clr-grey);
     width: 70px;
-    height: auto;
+    height: 100%;
     margin-left: 1rem;
 }
 .logo h2 {

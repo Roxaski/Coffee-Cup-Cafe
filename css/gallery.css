@@ -58,7 +58,7 @@ nav {
 .logo img {
     color: var(--clr-grey);
     width: 70px;
-    height: auto;
+    height: 100%;
     margin-left: 1rem;
 }
 .logo h2 {
@@ -155,6 +155,7 @@ nav.active .hamburger-menu .bars::after {
     display: block;
     width: 100%;
     height: 100%;
+    transform: scale(1);
     color: var(--clr-blk);
     transition: 300ms ease-in;
     cursor: pointer;
