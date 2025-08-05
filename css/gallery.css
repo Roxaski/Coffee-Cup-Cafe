@@ -146,6 +146,10 @@ nav.active .hamburger-menu .bars::after {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    transition: opacity 100ms ease-out;
+}
+.gallery.active {
+    opacity: 0;
 }
 .gallery img {
     display: block;

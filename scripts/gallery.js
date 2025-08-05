@@ -1,6 +1,7 @@
-const gallery = document.querySelectorAll('.gallery img');
+const gallery = document.querySelector('.gallery');
+const galleryImgs = document.querySelectorAll('.gallery img');
 const lightbox = document.querySelector('.lightbox img');
-const lightboxSizes = '(max-width: 876px) 90vw, 600px';
+const lightboxSizes = '(max-width: 865px) 90vw, 600px';
 const previousBtn = document.querySelector('.previous');
 const nextBtn = document.querySelector('.next');
 const overlay = document.querySelector('.overlay');
@@ -9,7 +10,7 @@ const overlay = document.querySelector('.overlay');
 let currentImage;
 
 // loop through each image in the gallery
-gallery.forEach((img, index) => {
+galleryImgs.forEach((img, index) => {
 
     img.addEventListener('click', () => {
         currentImage = index;
@@ -36,8 +37,8 @@ gallery.forEach((img, index) => {
 // preloads the previous and next image
 function preload(imageIndex) {
     // checks if the image is within the length of the gallery 
-    if (imageIndex >= 0 && imageIndex < gallery.length) {
-        const img = gallery[imageIndex];
+    if (imageIndex >= 0 && imageIndex < galleryImgs.length) {
+        const img = galleryImgs[imageIndex];
         const preloadImg = new Image();
 
         // sets the image src, srcset and size for the browser to preload
@@ -58,12 +59,12 @@ function imagePreview() {
     lightbox.classList.add('active');
 
     // lightbox should use more appropriate image sizes
-    lightbox.srcset = gallery[currentImage].srcset;
+    lightbox.srcset = galleryImgs[currentImage].srcset;
     lightbox.sizes = lightboxSizes;
-    lightbox.alt = gallery[currentImage].alt;
+    lightbox.alt = galleryImgs[currentImage].alt;
 
     // fallback in case srcset and sizes isn't supported on the browser
-    lightbox.src = gallery[currentImage].src;
+    lightbox.src = galleryImgs[currentImage].src;
 
     displayGalleryBtns();
 };
@@ -76,7 +77,7 @@ function displayGalleryBtns() {
         previousBtn.style.display = 'block';
     };
 
-    if(currentImage == gallery.length - 1) {
+    if(currentImage == galleryImgs.length - 1) {
         nextBtn.style.display = 'none';
     } else {
         nextBtn.style.display = 'block';
@@ -109,8 +110,33 @@ function closeOverlay() {
     previousBtn.style.display = 'none';
 };
 
+// closes the overlay
 overlay.addEventListener('click', () => {
     closeOverlay();
+});
+
+// stores the value of the timeout ID which is used to delay the image resize from triggering too often
+let timeoutID;
+
+window.addEventListener('resize', () => {
+    // clears the timeoutID after it's initially triggered
+    clearTimeout(timeoutID);
+
+    // triggers the timeout only if the lightbox is displayed
+    if(overlay.style.display == 'block') {
+        // added active class to gallery to help with flickering during resize
+        gallery.classList.add('active');
+
+        // re-render image then show the content after a short delay set by the timeout below
+        timeoutID = setTimeout(() => {
+            imagePreview();
+
+            // removes the active class on the next repaint
+            requestAnimationFrame(() => {
+                gallery.classList.remove('active');
+            });
+        }, 100); // 100ms delay before the next resize can happen
+    }
 });
 
 // stores the value of where the finger touches the screen
@@ -131,14 +157,17 @@ lightbox.addEventListener('touchend', (e) => {
     // returns the location of where touch ended on the X-axis
     touchEnd = e.changedTouches[0].clientX;
 
+    // defines the minimum distance needed to swipe for next and previous images
     const minSwipe = 100;
+    // calculates the value to show the next or previous image
     const swipeToChangeImg = touchStart - touchEnd;
 
-    if(swipeToChangeImg > minSwipe && currentImage < gallery.length - 1) {
+    // if you swipe to the left and aren't on the last image, then it displays the next image
+    if(swipeToChangeImg > minSwipe && currentImage < galleryImgs.length - 1) {
         currentImage ++;
         imagePreview();
         preload(currentImage + 1);
-
+    // Else if you swipe to the right and aren't on the first image, then it displays the previous image
     } else if (swipeToChangeImg < -minSwipe && currentImage > 0) {
         currentImage --;
         imagePreview();
@@ -148,7 +177,7 @@ lightbox.addEventListener('touchend', (e) => {
 
 // image navigation using the arrows keys
 window.addEventListener('keydown', (e) => {
-    if(overlay.style.display == 'block' && e.key == 'ArrowRight' &&  currentImage < gallery.length - 1) {
+    if(overlay.style.display == 'block' && e.key == 'ArrowRight' &&  currentImage < galleryImgs.length - 1) {
         currentImage ++;
         imagePreview();
         preload(currentImage + 1);
