@@ -209,9 +209,6 @@ nav.active .hamburger-menu .bars::after {
     background: var(--clr-blk);
     z-index: 2;
 }
-.overlay.active {
-    display: block;
-}
 /* Media Query's */
 @media screen and (max-width: 1175px) {
     .no-scroll {
