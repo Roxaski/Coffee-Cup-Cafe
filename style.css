@@ -187,7 +187,7 @@ nav.active .hamburger-menu .bars::after {
     position: absolute;
     bottom: 0;
     right: 0;
-    max-width: 535px;
+    max-width: 45vw;
     opacity: 75%;
     color: var(--clr-grey);
 }
@@ -239,7 +239,7 @@ nav.active .hamburger-menu .bars::after {
 }
 @media screen and (max-width: 725px) {
     .img-container img {
-        max-width: 450px;
+        max-width: 60vw;
     }
 }
 @media screen and (max-width: 445px) {
@@ -250,12 +250,7 @@ nav.active .hamburger-menu .bars::after {
         width: 85%;
     }
     .img-container img {
-        max-width: 350px;
-    }
-}
-@media screen and (max-width: 345px) {
-    .img-container img {
-        max-width: 300px;
+        max-width: 75vw;
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {

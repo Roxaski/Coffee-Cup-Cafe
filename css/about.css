@@ -153,7 +153,7 @@ nav.active .hamburger-menu .bars::after {
 }
 /* Media Query's */
 @media screen and (max-width: 1215px) {
-.grid-container {
+    .grid-container {
         grid-template-columns: repeat(1, 1fr);
     }
     .about {
