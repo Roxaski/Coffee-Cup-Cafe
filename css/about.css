@@ -30,7 +30,6 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     cursor: default;
 }
-/* Nav */
 nav {
     display: flex;
     align-items: center;
@@ -125,7 +124,6 @@ nav.active .hamburger-menu .bars::before {
 nav.active .hamburger-menu .bars::after {
     transform: translateY(0) rotate(45deg);
 }
-/* About */
 .wrapper {
     margin: 2.5rem 3rem;
     max-width: 90rem;
@@ -151,7 +149,6 @@ nav.active .hamburger-menu .bars::after {
     width: 100%;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
 }
-/* Media Query's */
 @media screen and (max-width: 1215px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr);
@@ -197,7 +194,6 @@ nav.active .hamburger-menu .bars::after {
         display: flex;
     }
 }
-/* Dark Mode */
 @media screen and (prefers-color-scheme: dark) {
     body {
         background: var(--clr-blk);
