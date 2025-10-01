@@ -22,6 +22,7 @@
     --clr-white: #f7f4f4;
     --clr-offWhite: #dad5d5;
     --clr-blk: #212121;
+    --clr-title: #2a2a2a;
     --clr-grey: #524e4e;
     --clr-darkGrey: #6b6767;
     --clr-lightGrey: #beb9b9;
@@ -161,6 +162,9 @@ nav.active .hamburger-menu .bars::after {
     grid-column: span 4;
     gap: 1rem;
     font-family: 'Fredericka the Great';
+    font-weight: 500;
+    text-shadow: 0 0 0.3px var(--clr-title);
+    letter-spacing: -0.01rem;
     font-size: clamp(2rem, 3vw, 2.75rem);
     text-align: center;
     text-transform: capitalize;
