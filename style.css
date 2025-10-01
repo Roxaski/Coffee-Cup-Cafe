@@ -143,7 +143,7 @@ nav.active .hamburger-menu .bars::after {
 .contents h1 {
     width: 75%;
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
     line-height: 1.5;
     text-transform: capitalize;
 }
@@ -152,7 +152,7 @@ nav.active .hamburger-menu .bars::after {
     margin-top: 1rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     line-height: 1.5;
     letter-spacing: .45px;
 }
@@ -165,6 +165,9 @@ nav.active .hamburger-menu .bars::after {
     border-radius: 10px;
     transition: ease-in-out 250ms;
 }
+.btn:hover {
+    background-color: var(--clr-blk);
+}
 .btn a {
     color: var(--clr-white);
     text-align: center;
@@ -172,22 +175,24 @@ nav.active .hamburger-menu .bars::after {
     text-transform: capitalize;
     letter-spacing: .5px;
     font-family: "Poppins", sans-serif;
-    font-size: clamp(1rem, 3vw, 1.1rem);
+    font-size: clamp(.9rem, 3vw, 1.1rem);
     font-weight: 400;
     padding: 10px 5px;
     line-height: 1.5;
     -webkit-tap-highlight-color: transparent;
 }
-.btn:hover {
-    background-color: var(--clr-blk);
-}
-.img-container img {
+.img-container {
     position: absolute;
     bottom: 0;
     right: 0;
-    max-width: 45vw;
-    opacity: 75%;
-    color: var(--clr-grey);
+    width: 45vw;
+    max-width: 600px;
+}
+.img-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: .75;
 }
 @media screen and (max-width: 1175px) {
     body {
@@ -221,51 +226,35 @@ nav.active .hamburger-menu .bars::after {
     .hamburger-menu {
         display: flex;
     }
-}
-@media screen and (max-width: 876px) {
     .wrapper {
-        margin: 1rem 0 0 2rem;
-    }
-    .contents h1,
-    .contents h2 {
-        width: 90%;
+        margin: 0 0 0 2rem;
     }
     .btn:hover {
         background-color: none;
     }
 }
-@media screen and (max-width: 725px) {
-    .img-container img {
-        max-width: 60vw;
+@media screen and (max-width: 875px) {
+    .contents h1,
+    .contents h2 {
+        width: 90%;
+    }
+    .img-container {
+        width: 60vw;
     }
 }
-@media screen and (max-width: 445px) {
-    .contents h1 {
-        width: 85%;
-    }
-    .contents h2 {
-        width: 85%;
-    }
-    .img-container img {
-        max-width: 75vw;
+@media screen and (max-width: 605px) {
+    .img-container {
+        width: 70vw;
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
-    .wrapper {
-        margin: 0 0 0 3rem;
-    }
-    .contents h1 {
-        font-size: clamp(1rem, 3vw, 1rem);
-    }
-    .contents h2 {
-        font-size: clamp(1rem, 3vw, 1rem);
-    }
     .contents h1,
     .contents h2 {
         width: 55%;
+        font-size: 1rem;
     }
-    .img-container img {
-        max-width: 375px;
+    .img-container {
+        width: 60vw;
     }
 }
 @media screen and (max-width: 655px) and (orientation: landscape) {

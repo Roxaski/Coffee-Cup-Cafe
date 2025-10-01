@@ -152,7 +152,7 @@ nav.active .hamburger-menu .bars::after {
 .gallery img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     color: var(--clr-blk);
     transition: 300ms ease-in;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
@@ -244,7 +244,7 @@ nav.active .hamburger-menu .bars::after {
         transform: none;
     }
 }
-@media screen and (max-width: 876px) {
+@media screen and (max-width: 875px) {
     .lightbox .btn i {
         display: none;
     }
