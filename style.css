@@ -187,6 +187,7 @@ nav.active .hamburger-menu .bars::after {
     right: 0;
     width: 45vw;
     max-width: 600px;
+    object-fit: contain;
 }
 .img-container img {
     display: block;
@@ -232,19 +233,19 @@ nav.active .hamburger-menu .bars::after {
     .btn:hover {
         background-color: none;
     }
+    .img-container {
+        width: 70vw;
+    }
 }
 @media screen and (max-width: 875px) {
     .contents h1,
     .contents h2 {
         width: 90%;
     }
-    .img-container {
-        width: 60vw;
-    }
 }
 @media screen and (max-width: 605px) {
     .img-container {
-        width: 70vw;
+        width: 95vw;
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
@@ -253,13 +254,14 @@ nav.active .hamburger-menu .bars::after {
         width: 55%;
         font-size: 1rem;
     }
+    .contents .btn {
+        margin-top: 1.25rem;
+    }
+    .contents .btn a {
+        font-size: .95rem;
+    }
     .img-container {
         width: 60vw;
-    }
-}
-@media screen and (max-width: 655px) and (orientation: landscape) {
-    .contents .btn {
-        margin-top: 1rem;
     }
 }
 @media screen and (prefers-color-scheme: dark) {
