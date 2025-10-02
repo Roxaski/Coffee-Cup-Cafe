@@ -125,7 +125,7 @@ nav.active .hamburger-menu .bars::after {
     transform: translateY(0) rotate(45deg);
 }
 .wrapper {
-    margin: 2.5rem 3rem;
+    margin: 3rem 2.5rem;
     max-width: 90rem;
     color: var(--clr-grey);
 }
