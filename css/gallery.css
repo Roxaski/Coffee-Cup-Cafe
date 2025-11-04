@@ -256,7 +256,7 @@ nav.active .hamburger-menu .bars::after {
 }
 @media screen and (max-width: 430px) {
     .gallery {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
 }
 @media screen and (orientation: landscape) and (max-width: 960px) {

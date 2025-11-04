@@ -151,7 +151,7 @@ nav.active .hamburger-menu .bars::after {
 }
 @media screen and (max-width: 1215px) {
     .grid-container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
     .about {
         width: 100%;

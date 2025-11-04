@@ -280,7 +280,7 @@ table td {
 }
 @media screen and (max-width: 650px) {
     .locations-container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
     .locations-container .opening-times,
     .locations-container .location {
