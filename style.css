@@ -234,18 +234,17 @@ nav.active .hamburger-menu .bars::after {
         background-color: none;
     }
     .img-container {
-        width: 70vw;
+        width: 85vw;
     }
 }
 @media screen and (max-width: 875px) {
+    .contents {
+        position: relative;
+        top: 2.5rem;
+    }
     .contents h1,
     .contents h2 {
         width: 90%;
-    }
-}
-@media screen and (max-width: 605px) {
-    .img-container {
-        width: 95vw;
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
