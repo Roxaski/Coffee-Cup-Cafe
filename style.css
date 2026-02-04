@@ -141,7 +141,7 @@ nav.active .hamburger-menu .bars::after {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 1.5rem;
+    padding: 2rem;
     max-width: 90rem;
     color: var(--clr-grey);
 }
@@ -221,7 +221,7 @@ nav.active .hamburger-menu .bars::after {
     .links ul li {
         position: relative;
         bottom: .5rem;
-        padding-top: 1.75rem;
+        padding-top: 3rem;
         margin-left: 0;
     }
     .links ul li a {
@@ -241,6 +241,14 @@ nav.active .hamburger-menu .bars::after {
     .contents h1,
     .contents h2 {
         width: 90%;
+    }
+    .img-container {
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 575px) {
+    .img-container {
+        width: 95vw;
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
