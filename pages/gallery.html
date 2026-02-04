@@ -25,7 +25,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest">
     <link rel="stylesheet" href="../css/gallery.css">
-    <script defer async src="https://kit.fontawesome.com/2d21b2aa33.js" crossorigin="anonymous"></script>
     <script defer src="../script.js"></script>
     <script defer src="../scripts/gallery.js"></script>
 </head>
@@ -36,11 +35,15 @@
                 <a href="../index.html">
                     <img width="160" height="160" draggable="false" 
                     src="../assets/logo/logo.webp" 
-                    alt="logo">
-                    
-                    <h2>Coffee Cup Café</h2>
+                    alt="Coffee Cup Café">
                 </a>
+                
+                <h2>Coffee Cup Café</h2>
             </div>
+
+            <button class="hamburger-menu" aria-label="opens navigation menu">
+                <div class="bars"></div>
+            </button>
 
             <div class="links">
                 <ul>
@@ -49,10 +52,6 @@
                     <li><a href="./locations.html">locations</a></li>
                     <li><a href="./about.html">about</a></li>
                 </ul>
-            </div>
-            
-            <div class="hamburger-menu" aria-label="opens navigation menu" role="button">
-                <div class="bars"></div>
             </div>
         </nav>
     </header>
@@ -240,13 +239,17 @@
             <div class="lightbox">
                 <img draggable="false" src="" alt="">
 
-                    <div role="button" aria-label="previous image" class="previous btn">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </div>
+                    <button class="previous btn" aria-label="previous image">
+                        <img class="chevron" width="48" height="48" draggable="false"
+                        src="../assets/icons/chevron-left.svg" 
+                        alt="">
+                    </button>
 
-                    <div role="button" aria-label="next image" class="next btn">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
+                    <button class="next btn" aria-label="next image">
+                        <img class="chevron" width="48" height="48" draggable="false" 
+                        src="../assets/icons/chevron-right.svg"
+                        alt="">
+                    </button>
                 </div>
             </div>
             
