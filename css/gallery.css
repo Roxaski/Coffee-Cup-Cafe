@@ -244,7 +244,7 @@ nav.active .hamburger-menu .bars::after {
     .links ul li {
         position: relative;
         bottom: .5rem;
-        padding-top: 1.75rem;
+        padding-top: 3rem;
         margin-left: 0;
     }
     .links ul li a {
