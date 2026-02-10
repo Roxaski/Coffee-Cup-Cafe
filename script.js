@@ -17,8 +17,8 @@ function toggleHamburgerMenu() {
 function handleEscape(e) {
     if (e.key !== 'Escape') return;
 
+    // hides the overlay
     if (nav.classList.contains('active')) {
-        e.preventDefault();
         nav.classList.remove('active');
         document.body.classList.remove('no-scroll');
     };
