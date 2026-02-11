@@ -258,7 +258,7 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 @media screen and (max-width: 875px) {
-    .lightbox .btn i {
+    .lightbox .btn {
         display: none;
     }
 }
@@ -276,7 +276,7 @@ nav.active .hamburger-menu .bars::after {
     .lightbox {
         width: 80%;
     }
-    .lightbox .btn i {
+    .lightbox .btn {
         display: none;
     }
 }
