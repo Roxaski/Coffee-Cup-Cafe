@@ -142,30 +142,6 @@ overlay.addEventListener('click', () => {
     closeOverlay();
 });
 
-// stores the value of the timeout ID which is used to delay the image resize from triggering too often
-let timeoutID;
-
-window.addEventListener('resize', () => {
-    // clears the timeoutID after it's initially triggered
-    clearTimeout(timeoutID);
-
-    // triggers the timeout only if the lightbox is displayed
-    if (isLightboxOpen) {
-        // added active class to gallery to help with flickering during resize
-        gallery.classList.add('active');
-
-        // re-render image then show the content after a short delay set by the timeout below
-        timeoutID = setTimeout(() => {
-            imagePreview();
-
-            // removes the active class on the next repaint
-            requestAnimationFrame(() => {
-                gallery.classList.remove('active');
-            });
-        }, 100); // 100ms delay before the next resize can happen
-    }
-});
-
 // stores the value of where the finger touches the screen
 let touchStart;
 
