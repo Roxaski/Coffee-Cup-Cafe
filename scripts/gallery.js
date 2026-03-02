@@ -10,7 +10,7 @@ const navElements = document.querySelectorAll('nav a, nav button');
 
 // stores the index of the currently displayed image
 let currentImage;
-// stores the value of wether the lightbox is open or not
+// stores the value of whether the lightbox is open or not
 let isLightboxOpen = false;
 
 // listens out for a click on the gallery
@@ -182,7 +182,7 @@ lightbox.addEventListener('touchend', (e) => {
 window.addEventListener('keydown', (e) => {
     // checks if the overlay is open, if so it runs the navigation code below
     if (isLightboxOpen) {
-        // navigates to the next image using the righ arrow, enter or space bar keys ( space bar works when the buttons are focused )
+        // navigates to the next image using the right arrow, enter or space bar keys ( space bar works when the buttons are focused )
         if ((e.key === 'ArrowRight' || ((e.key === 'Enter' || e.key === ' ') 
             && document.activeElement === nextBtn)) 
             && currentImage < galleryImgs.length - 1) {
@@ -191,7 +191,7 @@ window.addEventListener('keydown', (e) => {
             imagePreview();
             preload(currentImage + 1);
         } 
-        // navigates to the previous image using the righ arrow, enter or space bar keys ( space bar works when the buttons are focused )
+        // navigates to the previous image using the right arrow, enter or space bar keys ( space bar works when the buttons are focused )
         else if ((e.key === 'ArrowLeft' || ((e.key === 'Enter' || e.key === ' ')
             && document.activeElement === previousBtn)) 
             && currentImage > 0) {
