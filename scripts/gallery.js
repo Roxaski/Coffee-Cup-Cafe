@@ -55,9 +55,9 @@ function preload(imageIndex) {
 
 // displays an overlay
 function displayOverlay() {
+    overlay.classList.add('active');
     isLightboxOpen = true;
     document.body.style.overflow = 'hidden';
-    overlay.style.display = 'block';
 
     // prevents the gallery images from being focused while the lightbox is open
     galleryImgs.forEach(img => {
@@ -122,7 +122,7 @@ function closeOverlay() {
     lightbox.srcset = '';
     lightbox.alt = '';
     lightbox.classList.remove('active');
-    overlay.style.display = 'none';
+    overlay.classList.remove('active');
     nextBtn.classList.remove('visible');
     previousBtn.classList.remove('visible');
 
@@ -180,29 +180,17 @@ lightbox.addEventListener('touchend', (e) => {
 
 // image navigation using the arrows keys
 window.addEventListener('keydown', (e) => {
-    // checks if the overlay is open, if so it runs the navigation code below
-    if (isLightboxOpen) {
-        // navigates to the next image using the right arrow, enter or space bar keys ( space bar works when the buttons are focused )
-        if ((e.key === 'ArrowRight' || ((e.key === 'Enter' || e.key === ' ') 
-            && document.activeElement === nextBtn)) 
-            && currentImage < galleryImgs.length - 1) {
-            e.preventDefault();
-            currentImage++;
-            imagePreview();
-            preload(currentImage + 1);
-        } 
-        // navigates to the previous image using the right arrow, enter or space bar keys ( space bar works when the buttons are focused )
-        else if ((e.key === 'ArrowLeft' || ((e.key === 'Enter' || e.key === ' ')
-            && document.activeElement === previousBtn)) 
-            && currentImage > 0) {
-            e.preventDefault();
-            currentImage--;
-            imagePreview();
-            preload(currentImage - 1);
-        }
-        // closes the overlay with the escape key
-        else if (e.key === 'Escape') {
-            closeOverlay();
-        };
+    if(overlay.classList.contains('active') && e.key == 'ArrowRight' &&  currentImage < filteredGallery.length - 1) {
+        currentImage ++;
+        imagePreview();
+        preload(currentImage +1);
+
+    } else if (overlay.classList.contains('active') && e.key == 'ArrowLeft' && currentImage > 0) {
+        currentImage --;
+        imagePreview();
+        preload(currentImage -1);
+
+    } else if (e.key == 'Escape') {
+        closeOverlay();
     };
 });
