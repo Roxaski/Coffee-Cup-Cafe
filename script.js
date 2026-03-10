@@ -2,34 +2,29 @@ const nav = document.querySelector('nav');
 const logo = document.querySelector('.logo a');
 const links = document.querySelector('.links');
 const menu = document.querySelector('.hamburger-menu');
+const main = document.querySelector('main');
 
 menu.addEventListener('click', toggleHamburgerMenu);
-document.addEventListener('keydown', handleEscape);
-logo.addEventListener('focusin', removeLogoFocus);
 
 // toggles the hamburger menu, along with disabling scroll when menu is open
 function toggleHamburgerMenu() {
     nav.classList.toggle('active');
+    const active = nav.classList.contains('active');
     document.body.classList.toggle('no-scroll');
-};
+    main.inert = active;
+    logo.inert = active;
 
-// closes the hamburger menu
-function handleEscape(e) {
-    if (e.key !== 'Escape') return;
-
-    // hides the overlay
-    if (nav.classList.contains('active')) {
-        nav.classList.remove('active');
-        document.body.classList.remove('no-scroll');
+    // only listens for a key press when the hamburger menu is open
+    if (active) {
+        document.addEventListener('keydown', escapeKeyPress);
+    } else {
+        document.removeEventListener('keydown', escapeKeyPress);
     };
 };
 
-function removeLogoFocus(e) {
-    // checks if the nav contains the active class
-    if (nav.classList.contains('active')) {
-        // removes the focus from the logo
-        e.currentTarget.blur();
-        // makes the hamburger menu be the focus when nav is active
-        menu.focus();
+// closes the hamburger menu with escape key
+function escapeKeyPress(e) {
+    if (e.key === 'Escape') {
+        toggleHamburgerMenu();
     };
 };
