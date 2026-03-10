@@ -240,6 +240,8 @@ table td {
     }
     nav.active .links {
         transform: translate(0);
+        visibility: visible;
+        transition: transform 350ms ease, visibility 0s;
     }
     .links {
         display: flex;
@@ -249,7 +251,8 @@ table td {
         inset: 0;
         background-color: var(--clr-white);
         transform: translateX(100%);
-        transition: transform 350ms ease;
+        transition: transform 350ms ease, visibility 0s linear 350ms;
+        visibility: hidden;
         z-index: 1;
     }
     .links ul {
