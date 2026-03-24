@@ -34,6 +34,9 @@
     border-radius: 20px;
     border: transparent;
 }
+.no-scroll {
+    overflow-y: hidden;
+}
 body {
     width: 100%;
     height: 100vh;
@@ -197,18 +200,18 @@ nav.active .hamburger-menu .bars::after {
     pointer-events: none;
 }
 .lightbox .btn .chevron {
-    width: 3rem;
+    width: 5rem;
     height: auto;
 }
-.lightbox .btn.visible {
+.lightbox .btn.active {
     visibility: visible;
     pointer-events: auto;
 }
 .lightbox .previous {
-    left: -5rem;
+    left: -14rem;
 }
 .lightbox .next {
-    right: -5rem;
+    right: -14rem;
 }
 .overlay {
     display: none;
@@ -259,11 +262,13 @@ nav.active .hamburger-menu .bars::after {
     .hamburger-menu {
         display: flex;
     }
-    .gallery img:hover {
-        transform: none;
-    }
 }
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 1060px) {
+    .lightbox img {
+        max-width: 90vw;
+        height: auto;
+        margin: 0 auto;
+    }
     .lightbox .btn {
         display: none;
     }
@@ -280,9 +285,14 @@ nav.active .hamburger-menu .bars::after {
 }
 @media screen and (orientation: landscape) and (max-width: 960px) {
     .lightbox {
-        width: 80%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: auto;
     }
-    .lightbox .btn {
+    .lightbox .btn i {
         display: none;
     }
 }
