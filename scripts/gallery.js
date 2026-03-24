@@ -30,29 +30,29 @@ function setLightboxImg() {
     and setting the tab index to -1 in order to prevent the gallery images from being tabbed
 */
 function openLightBox(e) {
-    document.body.classList.add('no-scroll');
-
-    // stores the value of the current image that was clicked on from the array
-    currentImg = galleryImgArray.indexOf(e.target);
-    
     // checks if the target is an image within the gallery
     if(e.target.tagName === 'IMG') {
-        setLightboxImg();
+        document.body.classList.add('no-scroll');
 
+        // stores the value of the current image that was clicked on from the array
+        currentImg = galleryImgArray.indexOf(e.target);
+
+        setLightboxImg();
+        
         overlay.classList.add('active');
         lightbox.classList.add('active');
+
+        // loops through each element and sets the tab index accordingly
+        navElements.forEach(link => {
+            link.setAttribute('tabIndex', '-1');
+        });
+
+        galleryImgArray.forEach(img => {
+            img.setAttribute('tabIndex', '-1');
+        });
+
+        lightboxBtns();
     };
-
-    // loops through each element and sets the tab index accordingly
-    navElements.forEach(link => {
-        link.setAttribute('tabIndex', '-1');
-    });
-
-    galleryImgArray.forEach(img => {
-        img.setAttribute('tabIndex', '-1');
-    });
-
-    lightboxBtns();
 };
 
 // hides one of the lightbox buttons depending on the position of the image within the array
