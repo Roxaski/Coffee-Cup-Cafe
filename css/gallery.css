@@ -226,7 +226,6 @@ nav.active .hamburger-menu .bars::after {
 .overlay.active {
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 100ms ease;
 }
 @media screen and (max-width: 1175px) {
     .no-scroll {
