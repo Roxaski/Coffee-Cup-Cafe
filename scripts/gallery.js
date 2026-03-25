@@ -16,10 +16,11 @@ let preloadNextImg = new Image();
 // creates an array of the images within the gallery
 const galleryImgArray = Array.from(galleryImgs);
 
-// clears lightbox image before setting it to the currently selected gallery image
+/*
+    setting both src and srcset before clearing them with the close lightbox function, 
+    to prevent firefox from briefly flashing the previous clicked image
+*/
 function setLightboxImg() {
-    lightbox.src = '';
-    lightbox.srcset = '';
     lightbox.src = galleryImgArray[currentImg].src;
     lightbox.srcset = galleryImgArray[currentImg].srcset;
 };
@@ -32,6 +33,10 @@ function setLightboxImg() {
 function openLightBox(e) {
     // checks if the target is an image within the gallery
     if(e.target.tagName === 'IMG') {
+        // calculates the scrollbar width in order to prevent layout shifts when the scrollbar disappears
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+
         document.body.classList.add('no-scroll');
 
         // stores the value of the current image that was clicked on from the array
@@ -39,6 +44,8 @@ function openLightBox(e) {
 
         setLightboxImg();
         
+        overlay.style.transition = 'opacity 150ms ease';
+
         overlay.classList.add('active');
         lightbox.classList.add('active');
 
@@ -86,9 +93,13 @@ function preloadAdjacentImgs() {
     while also setting the tab index back to 0 to allow the images in the gallery to be tabbed to
 */
 function closeLightbox () {
+    document.body.style.paddingRight = '';
     document.body.classList.remove('no-scroll');
+    overlay.style.transition = 'none';
     overlay.classList.remove('active');
     lightbox.classList.remove('active');
+    lightbox.src = '';
+    lightbox.srcset = '';
     previousBtn.classList.remove('active');
     nextBtn.classList.remove('active');
 
@@ -194,6 +205,7 @@ lightbox.addEventListener('touchend', (e) => {
 
     // checks if the swipe moved at least 100px to the left
     if(screenTapEnd - screenTapStart <= -100 && lightbox.classList.contains('active')) {
+        
         if(currentImg === galleryImgArray.length - 1) {
             return;
         };
@@ -205,6 +217,7 @@ lightbox.addEventListener('touchend', (e) => {
 
     // checks if the swipe moved at least 100px to the right
     } else if(screenTapEnd - screenTapStart >= 100 && lightbox.classList.contains('active')) {
+        
         if(currentImg === 0) {
             return;
         };
