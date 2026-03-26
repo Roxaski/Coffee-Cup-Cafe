@@ -178,6 +178,10 @@ nav.active .hamburger-menu .bars::after {
     max-width: 600px;
     z-index: 3;
 }
+.lightbox-no-scroll {
+    overflow: hidden;
+    pointer-events: none;
+}
 .lightbox > img {
     display: none;
     max-width: 90vw;
