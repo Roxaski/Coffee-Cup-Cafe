@@ -17,12 +17,16 @@ let preloadNextImg = new Image();
 const galleryImgArray = Array.from(galleryImgs);
 
 /*
-    setting both src and srcset before clearing them with the close lightbox function, 
-    to prevent firefox from briefly flashing the previous clicked image
+    waits for the image to be fully decoded before displaying it,
+    this is done to prevent firefox from briefly flashing the previous image if one was clicked on
 */
-function setLightboxImg() {
-    lightbox.src = galleryImgArray[currentImg].src;
-    lightbox.srcset = galleryImgArray[currentImg].srcset;
+async function setLightboxImg() {
+    const img = galleryImgArray[currentImg];
+    
+    lightbox.src = img.src;
+    lightbox.srcset = img.srcset;
+    
+    await lightbox.decode();
 };
 
 /*

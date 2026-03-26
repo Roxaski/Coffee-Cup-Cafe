@@ -42,6 +42,7 @@ body {
     height: 100vh;
     background: var(--clr-white);
     font-family: 'Josefin Sans', sans-serif;
+    scrollbar-gutter: stable;
     cursor: default;
 }
 nav {
@@ -161,6 +162,7 @@ nav.active .hamburger-menu .bars::after {
     height: auto;
     color: var(--clr-blk);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+    contain: layout;
     cursor: pointer;
 }
 .lightbox {
