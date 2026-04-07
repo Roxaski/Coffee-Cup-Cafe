@@ -226,4 +226,7 @@ lightbox.addEventListener('touchend', (e) => {
         setLightboxImg();
         preloadAdjacentImgs();
     };
+
+    // reseting this back to false after the swipe is finished to prevent swipe issues
+    imgZoom = false;
 });
