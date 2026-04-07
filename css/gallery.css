@@ -179,6 +179,11 @@ nav.active .hamburger-menu .bars::after {
     overflow: hidden;
     pointer-events: none;
 }
+.lightbox-no-scroll .lightbox,
+.lightbox-no-scroll .lightbox img,
+.lightbox-no-scroll .overlay {
+    pointer-events: auto;
+}
 .lightbox > img {
     display: none;
     max-width: 90vw;
