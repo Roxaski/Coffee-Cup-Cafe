@@ -170,9 +170,8 @@ nav.active .hamburger-menu .bars::after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: fit-content;
     height: auto;
-    max-width: 600px;
     z-index: 3;
 }
 .lightbox-no-scroll {
@@ -197,29 +196,31 @@ nav.active .hamburger-menu .bars::after {
     display: block;
 }
 .lightbox .btn {
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
     border: none;
-    color: var(--clr-white);
+    color: var(--white);
     cursor: pointer;
     visibility: hidden;
     pointer-events: none;
-}
-.lightbox .btn .chevron {
-    width: 5rem;
-    height: auto;
 }
 .lightbox .btn.active {
     visibility: visible;
     pointer-events: auto;
 }
+.lightbox .btn .chevron {
+    width: 5rem;
+    height: auto;
+}
 .lightbox .previous {
-    left: -14rem;
+    left: 0;
+    transform: translateY(-50%) translateX(-100%);
 }
 .lightbox .next {
-    right: -14rem;
+    right: 0;
+    transform: translateY(-50%) translateX(100%);
 }
 .overlay {
     opacity: 0;
