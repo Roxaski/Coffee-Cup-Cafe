@@ -34,7 +34,7 @@ async function setLightboxImg() {
     along with disabling the respective buttons from the first and last lightbox image,
     and setting the tab index to -1 in order to prevent the gallery images from being tabbed
 */
-function openLightBox(e) {
+async function openLightBox(e) {
     // checks if the target is an image within the gallery
     if(e.target.tagName === 'IMG') {
         document.body.classList.add('lightbox-no-scroll');
@@ -42,7 +42,8 @@ function openLightBox(e) {
         // stores the value of the current image that was clicked on from the array
         currentImg = galleryImgArray.indexOf(e.target);
 
-        setLightboxImg();
+        // waits until the image is ready, then runs rest of code to prevent any flashes in firefox
+        await setLightboxImg();
         
         overlay.style.transition = 'opacity 150ms ease';
 
