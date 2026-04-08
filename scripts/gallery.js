@@ -195,7 +195,13 @@ lightbox.addEventListener('touchstart', (e) => {
 });
 
 lightbox.addEventListener('touchend', (e) => {
-    if(e.touches.length > 0 || imgZoom) {
+    // if there no fingers on the screen then the variable is set to false
+    if (e.touches.length === 0) {
+        imgZoom = false;
+    };
+
+    // returns early if any fingers are still on the screen or if image zoom is active
+    if (e.touches.length > 0 || imgZoom) {
         return;
     };
 
@@ -216,7 +222,7 @@ lightbox.addEventListener('touchend', (e) => {
 
     // checks if the swipe moved at least 100px to the right
     } else if(screenTapEnd - screenTapStart >= 100 && lightbox.classList.contains('active')) {
-        
+
         if(currentImg === 0) {
             return;
         };
@@ -226,7 +232,4 @@ lightbox.addEventListener('touchend', (e) => {
         setLightboxImg();
         preloadAdjacentImgs();
     };
-
-    // reseting this back to false after the swipe is finished to prevent swipe issues
-    imgZoom = false;
 });
