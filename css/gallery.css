@@ -216,11 +216,13 @@ nav.active .hamburger-menu .bars::after {
 }
 .lightbox .previous {
     left: 0;
-    transform: translateY(-50%) translateX(-100%);
+    transform: translateY(-50%);
+    margin-left: -5rem;
 }
 .lightbox .next {
     right: 0;
-    transform: translateY(-50%) translateX(100%);
+    transform: translateY(-50%);
+    margin-right: -5rem;
 }
 .overlay {
     opacity: 0;
