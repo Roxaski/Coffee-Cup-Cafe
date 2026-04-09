@@ -150,9 +150,6 @@ nav.active .hamburger-menu .bars::after {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
-.gallery.active {
-    opacity: 0;
-}
 .gallery img {
     display: block;
     width: 100%;
@@ -176,7 +173,6 @@ nav.active .hamburger-menu .bars::after {
 }
 .lightbox-no-scroll {
     overflow: hidden;
-    pointer-events: none;
 }
 .lightbox-no-scroll .lightbox,
 .lightbox-no-scroll .lightbox img,
