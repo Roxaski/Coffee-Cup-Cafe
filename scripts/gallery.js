@@ -2,7 +2,7 @@ const navElements = document.querySelectorAll('nav a');
 const gallery = document.querySelector('.gallery');
 const galleryImgs = document.querySelectorAll('.gallery img');
 const overlay = document.querySelector('.overlay');
-const lightbox = document.querySelector('.lightbox img');
+const lightboxImg = document.querySelector('.lightbox img');
 const previousBtn = document.querySelector('.previous');
 const nextBtn = document.querySelector('.next');
 
@@ -23,10 +23,10 @@ const galleryImgArray = Array.from(galleryImgs);
 async function setLightboxImg() {
     const img = galleryImgArray[currentImg];
     
-    lightbox.src = img.src;
-    lightbox.srcset = img.srcset;
+    lightboxImg.src = img.src;
+    lightboxImg.srcset = img.srcset;
     
-    await lightbox.decode();
+    await lightboxImg.decode();
 };
 
 /*
@@ -47,7 +47,7 @@ function openLightBox(e) {
         overlay.style.transition = 'opacity 150ms ease';
 
         overlay.classList.add('active');
-        lightbox.classList.add('active');
+        lightboxImg.classList.add('active');
 
         // loops through each element and sets the tab index accordingly
         navElements.forEach(link => {
@@ -59,7 +59,7 @@ function openLightBox(e) {
         });
 
         // only displays the lightbox buttons once the lightbox img is loaded
-        lightbox.onload = lightboxBtns;
+        lightboxImg.onload = lightboxBtns;
     };
 };
 
@@ -97,9 +97,9 @@ function closeLightbox () {
     document.body.classList.remove('lightbox-no-scroll');
     overlay.style.transition = 'none';
     overlay.classList.remove('active');
-    lightbox.classList.remove('active');
-    lightbox.src = '';
-    lightbox.srcset = '';
+    lightboxImg.classList.remove('active');
+    lightboxImg.src = '';
+    lightboxImg.srcset = '';
     previousBtn.classList.remove('active');
     nextBtn.classList.remove('active');
 
@@ -141,11 +141,11 @@ nextBtn.addEventListener('click', () => {
 
 // lightbox click event listeners for keyboard
 window.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && lightbox.classList.contains('active')) {
+    if(e.key === 'Escape' && lightboxImg.classList.contains('active')) {
         closeLightbox();
     };
 
-    if(e.key === 'ArrowLeft' && lightbox.classList.contains('active')) {
+    if(e.key === 'ArrowLeft' && lightboxImg.classList.contains('active')) {
         if(currentImg === 0) {
             return;
         };
@@ -156,7 +156,7 @@ window.addEventListener('keydown', (e) => {
         lightboxBtns();
         preloadAdjacentImgs();
 
-    } else if (e.key === 'ArrowRight' && lightbox.classList.contains('active')) {
+    } else if (e.key === 'ArrowRight' && lightboxImg.classList.contains('active')) {
         if(currentImg === galleryImgArray.length - 1) {
             return;
         };
@@ -182,7 +182,7 @@ let screenTapStart;
 let screenTapEnd;
 let imgZoom = false;
 
-lightbox.addEventListener('touchstart', (e) => {
+lightboxImg.addEventListener('touchstart', (e) => {
     // keeps track of whether more than one finger is on the screen
     if(e.touches.length > 1) {
         imgZoom = true;
@@ -195,7 +195,7 @@ lightbox.addEventListener('touchstart', (e) => {
     screenTapStart = e.touches[0].clientX;
 });
 
-lightbox.addEventListener('touchend', (e) => {
+lightboxImg.addEventListener('touchend', (e) => {
     // if there no fingers on the screen then the variable is set to false
     if (e.touches.length === 0) {
         imgZoom = false;
@@ -210,7 +210,7 @@ lightbox.addEventListener('touchend', (e) => {
     screenTapEnd = e.changedTouches[0].clientX;
 
     // checks if the swipe moved at least 100px to the left
-    if(screenTapEnd - screenTapStart <= -100 && lightbox.classList.contains('active')) {
+    if(screenTapEnd - screenTapStart <= -100 && lightboxImg.classList.contains('active')) {
         
         if(currentImg === galleryImgArray.length - 1) {
             return;
@@ -222,7 +222,7 @@ lightbox.addEventListener('touchend', (e) => {
         preloadAdjacentImgs();
 
     // checks if the swipe moved at least 100px to the right
-    } else if(screenTapEnd - screenTapStart >= 100 && lightbox.classList.contains('active')) {
+    } else if(screenTapEnd - screenTapStart >= 100 && lightboxImg.classList.contains('active')) {
 
         if(currentImg === 0) {
             return;
