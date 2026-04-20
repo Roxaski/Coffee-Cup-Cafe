@@ -86,17 +86,6 @@ nav {
     line-height: 1.2;
     font-weight: 400;
 }
-.screen-reader-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
 .hamburger-menu {
     display: none;
     align-items: center;
@@ -189,6 +178,11 @@ table thead tr th {
     font-weight: 400;
     padding: .6rem;
 }
+table tbody tr th {
+    text-align: left;
+    padding: .5rem;
+}
+table tbody tr th,
 table tbody tr td {
     padding: .5rem;
 }
