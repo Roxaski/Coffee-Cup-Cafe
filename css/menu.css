@@ -70,7 +70,7 @@ nav {
     width: 70px;
     height: 100%;
 }
-.logo h1 {
+.logo span {
     display: inline-block;
     position: relative;
     top: .45rem;
@@ -221,7 +221,7 @@ nav.active .hamburger-menu .bars::after {
     margin-top: 2.5rem;
     border-bottom: var(--clr-lightGrey) 2px solid;
 }
-.card .information h2 {
+.card .information h3 {
     font-size: clamp(1rem, 3vw, 1.15rem);
     font-weight: 400;
 }
@@ -312,7 +312,7 @@ nav.active .hamburger-menu .bars::after {
     }
     .wrapper,
     .logo img,
-    .logo h1,
+    .logo span,
     .links ul li a {
         color: var(--clr-offWhite);
     }

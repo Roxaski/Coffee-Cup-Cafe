@@ -57,7 +57,7 @@ nav {
     width: 70px;
     height: 100%;
 }
-.logo h1 {
+.logo span {
     display: inline-block;
     position: relative;
     top: .45rem;
@@ -152,7 +152,7 @@ nav.active .hamburger-menu .bars::after {
     line-height: 1.5;
     text-transform: capitalize;
 }
-.contents h3 {
+.contents p {
     width: 60%;
     margin-top: 1rem;
     font-family: 'Poppins', sans-serif;
@@ -242,7 +242,7 @@ nav.active .hamburger-menu .bars::after {
 }
 @media screen and (max-width: 875px) {
     .contents h2,
-    .contents h3 {
+    .contents p {
         width: 90%;
     }
     .img-container {
@@ -256,7 +256,7 @@ nav.active .hamburger-menu .bars::after {
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
     .contents h2,
-    .contents h3 {
+    .contents p {
         width: 55%;
         font-size: 1rem;
     }
@@ -273,7 +273,7 @@ nav.active .hamburger-menu .bars::after {
     }
     .wrapper,
     .logo img,
-    .logo h1,
+    .logo span,
     .links ul li a {
         color: var(--clr-offWhite);
     }
