@@ -335,3 +335,13 @@ nav.active .hamburger-menu .bars::after {
         border-bottom: var(--clr-grey) 2px solid;
     }
 }
+@media (prefers-reduced-motion: reduce) {
+    nav.active .links,
+    .links {
+        transition: none;
+    }
+    .bars::before,
+    .bars::after {
+        transition: none;
+    }
+}

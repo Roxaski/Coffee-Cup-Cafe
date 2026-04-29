@@ -299,3 +299,13 @@ nav.active .hamburger-menu .bars::after {
         filter: invert(1);
     }
 }
+@media (prefers-reduced-motion: reduce) {
+    nav.active .links,
+    .links {
+        transition: none;
+    }
+    .bars::before,
+    .bars::after {
+        transition: none;
+    }
+}

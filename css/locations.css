@@ -359,3 +359,13 @@ table td {
         color: var(--clr-offWhite);
     }
 }
+@media (prefers-reduced-motion: reduce) {
+    nav.active .links,
+    .links {
+        transition: none;
+    }
+    .bars::before,
+    .bars::after {
+        transition: none;
+    }
+}
