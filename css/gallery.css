@@ -112,13 +112,13 @@ nav {
 .bars::after {
     transform: translateY(8px);
 }
-nav.active .hamburger-menu .bars {
+nav.menu-open .hamburger-menu .bars {
     background-color: transparent;
 }
-nav.active .hamburger-menu .bars::before {
+nav.menu-open .hamburger-menu .bars::before {
     transform: translateY(0) rotate(-45deg);
 }
-nav.active .hamburger-menu .bars::after {
+nav.menu-open .hamburger-menu .bars::after {
     transform: translateY(0) rotate(45deg);
 }
 .links ul {
@@ -232,7 +232,7 @@ nav.active .hamburger-menu .bars::after {
         position: fixed;
         overflow-y: hidden;
     }
-    nav.active .links {
+    nav.menu-open .links {
         transform: translate(0);
         visibility: visible;
         transition: transform 350ms ease, visibility 0s;
@@ -265,7 +265,7 @@ nav.active .hamburger-menu .bars::after {
         display: flex;
     }
 }
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1150px) {
     .lightbox > img {
         margin: 0 auto;
     }
@@ -324,7 +324,7 @@ nav.active .hamburger-menu .bars::after {
     }
 }
 @media (prefers-reduced-motion: reduce) {
-    nav.active .links,
+    nav.menu-open .links,
     .links {
         transition: none;
     }
