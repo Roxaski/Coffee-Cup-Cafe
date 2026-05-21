@@ -37,17 +37,6 @@
     color: var(--clr-white);
     background-color: var(--clr-darkBrown);
 }
-::-webkit-scrollbar {
-    width: 7px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background-color: var(--clr-darkBrown);
-    border-radius: 20px;
-    border: transparent;
-}
 body {
     width: 100%;
     height: 100vh;
@@ -317,9 +306,6 @@ table td {
     }
 }
 @media screen and (prefers-color-scheme: dark) {
-    ::-webkit-scrollbar-thumb {
-        background-color: var(--clr-offWhite);
-    }
     body {
         background: var(--clr-blk);
     }
