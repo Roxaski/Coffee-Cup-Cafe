@@ -204,6 +204,7 @@ nav.menu-open .hamburger-menu .bars::after {
 }
 @media screen and (prefers-color-scheme: dark) {
     body {
+        color: var(--clr-offWhite);
         background: var(--clr-blk);
     }
     .logo img,
