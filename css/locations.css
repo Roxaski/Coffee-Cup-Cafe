@@ -30,7 +30,8 @@
     --clr-offWhite: #dad5d5;
     --clr-blk: #212121;
     --clr-grey: #524e4e;
-    --clr-charcoalGrey: #9f9f9f; 
+    --clr-charcoalGrey: #9f9f9f;
+    --clr-darkGrey: #2c2c2c;
     --clr-brwn: #b27526;
     --clr-darkBrown: #865340;
 }
@@ -345,7 +346,7 @@ table td {
         color: var(--clr-offWhite);
     }
     .location .info {
-        scrollbar-color: var(--clr-charcoalGrey) var(--clr-blk);
+        scrollbar-color: var(--clr-charcoalGrey) var(--clr-darkGrey);
     }
     .location .info p {
         color: var(--clr-offWhite);
