@@ -28,6 +28,7 @@ body {
     max-width: 90rem;
     height: 100vh;
     background: var(--clr-white);
+    scrollbar-gutter: stable;
     font-family: 'Josefin Sans', sans-serif;
     cursor: default;
 }
