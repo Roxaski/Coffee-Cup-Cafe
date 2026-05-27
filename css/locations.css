@@ -343,6 +343,9 @@ table td {
     .location img {
         color: var(--clr-offWhite);
     }
+    .location .info {
+        scrollbar-color: var(--clr-grey) var(--clr-blk);
+    }
     .location .info p {
         color: var(--clr-offWhite);
     }
