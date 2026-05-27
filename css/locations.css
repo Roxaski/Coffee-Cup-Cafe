@@ -39,7 +39,9 @@
 }
 body {
     width: 100%;
+    max-width: 90rem;
     height: 100vh;
+    color: var(--clr-grey);
     background: var(--clr-white);
     font-family: 'Josefin Sans', sans-serif;
     cursor: default;
@@ -48,12 +50,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
-    max-width: 96rem;
+    padding: 1.5rem;
 }
 .logo {
     display: flex;
     align-items: center;
+    position: relative;
+    right: .35rem;
 }
 .logo a {
     text-decoration: none;
@@ -80,7 +83,7 @@ nav {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 2.75rem;
+    top: 3.75rem;
     right: .75rem;
     width: auto;
     height: auto;
@@ -146,15 +149,11 @@ nav.menu-open .hamburger-menu .bars::after {
 .links ul li a:hover {
     color: var(--clr-brwn);
 }
-.wrapper {
-    padding: 1.5rem;
-    max-width: 90rem;
-    color: var(--clr-grey);
-}
-.locations-container {
+.grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+    padding: 1.5rem;
 }
 table {
     border-collapse: collapse;
@@ -276,19 +275,19 @@ table td {
     table tbody tr td {
         padding: .5rem;
     }
-    .locations-container {
+    .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    .locations-container .opening-times {
+    .grid-container .opening-times {
         grid-column: 1 / -1;
     }
 }
 @media screen and (max-width: 650px) {
-    .locations-container {
+    .grid-container {
         grid-template-columns: 1fr;
     }
-    .locations-container .opening-times,
-    .locations-container .location {
+    .grid-container .opening-times,
+    .grid-container .location {
         grid-column: span 4;
     }
     table tbody tr td:nth-child(even) {
@@ -304,7 +303,7 @@ table td {
     }
 }
 @media screen and (max-width: 1250px) and (orientation: landscape) {
-    .locations-container {
+    .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -312,7 +311,6 @@ table td {
     body {
         background: var(--clr-blk);
     }
-    .wrapper,
     .logo img,
     .logo p,
     .links ul li a {

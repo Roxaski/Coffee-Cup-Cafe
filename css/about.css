@@ -25,7 +25,9 @@
 }
 body {
     width: 100%;
+    max-width: 90rem;
     height: 100vh;
+    color: var(--clr-grey);
     background: var(--clr-white);
     font-family: 'Josefin Sans', sans-serif;
     cursor: default;
@@ -34,12 +36,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
-    max-width: 96rem;
+    padding: 1.5rem;
 }
 .logo {
     display: flex;
     align-items: center;
+    position: relative;
+    right: .35rem;
 }
 .logo a {
     text-decoration: none;
@@ -132,14 +135,10 @@ nav.menu-open .hamburger-menu .bars::after {
 .links ul li a:hover {
     color: var(--clr-brwn);
 }
-.wrapper {
-    padding: 1.5rem;
-    max-width: 90rem;
-    color: var(--clr-grey);
-}
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
+    padding: 1.5rem;
 }
 .about {
     display: flex;
@@ -207,7 +206,6 @@ nav.menu-open .hamburger-menu .bars::after {
     body {
         background: var(--clr-blk);
     }
-    .wrapper,
     .logo img,
     .logo p,
     .links ul li a {

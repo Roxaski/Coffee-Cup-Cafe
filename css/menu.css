@@ -35,7 +35,9 @@
 }
 body {
     width: 100%;
+    max-width: 90rem;
     height: 100vh;
+    color: var(--clr-grey);
     background: var(--clr-white);
     font-family: 'Josefin Sans', sans-serif;
     cursor: default;
@@ -44,12 +46,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
-    max-width: 96rem;
+    padding: 1.5rem;
 }
 .logo {
     display: flex;
     align-items: center;
+    position: relative;
+    right: .35rem;
 }
 .logo a {
     text-decoration: none;
@@ -76,7 +79,7 @@ nav {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 2.75rem;
+    top: 3.75rem;
     right: .75rem;
     width: auto;
     height: auto;
@@ -142,15 +145,11 @@ nav.menu-open .hamburger-menu .bars::after {
 .links ul li a:hover {
     color: var(--clr-brwn);
 }
-.wrapper {
-    padding: 1.5rem;
-    max-width: 90rem;
-    color: var(--clr-grey);
-}
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: .75rem;
+    padding: 1.5rem;
 }
 .grid-container .title {
     display: flex;
@@ -299,7 +298,6 @@ nav.menu-open .hamburger-menu .bars::after {
     body {
         background: var(--clr-blk);
     }
-    .wrapper,
     .logo img,
     .logo p,
     .links ul li a {
