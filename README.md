@@ -1,4 +1,5 @@
-<img width="1920" height="1080" alt="github_read me" src="https://github.com/user-attachments/assets/a98129a2-13b1-478a-85ec-310ba0009bfe" />
+![Coffee Cup Cafe](https://github.com/user-attachments/assets/34f366ea-c5b0-4aef-bc2c-41befee58e5f#gh-dark-mode-only)
+![Coffee Cup Cafe](https://github.com/user-attachments/assets/0da61dd6-ef14-4d80-af89-d8f758aaa8ee#gh-light-mode-only)
 
 ## Welcome to Coffee Cup Café
 
