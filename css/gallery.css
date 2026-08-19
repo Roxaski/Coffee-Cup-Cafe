@@ -26,6 +26,7 @@
 body {
     width: 100%;
     max-width: 90rem;
+    margin: 0 auto;
     height: 100vh;
     background: var(--clr-white);
     scrollbar-gutter: stable;
@@ -148,6 +149,7 @@ nav.menu-open .hamburger-menu .bars::after {
     color: var(--clr-blk);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
     contain: layout;
+    aspect-ratio: 16 / 9;
     cursor: pointer;
 }
 .lightbox {

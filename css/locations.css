@@ -40,6 +40,7 @@
 body {
     width: 100%;
     max-width: 90rem;
+    margin: 0 auto;
     height: 100vh;
     color: var(--clr-grey);
     background: var(--clr-white);
@@ -212,6 +213,7 @@ table td {
     right: .75rem;
     transform: translate(-50%, -50%);
     transform: rotate(50deg);
+    aspect-ratio: 1 / 1;
 }
 .location .info {
     max-height: 300px;

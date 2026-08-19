@@ -34,6 +34,7 @@
 body {
     width: 100%;
     max-width: 90rem;
+    margin: 0 auto;
     height: 100vh;
     color: var(--clr-grey);
     background: var(--clr-white);
@@ -177,7 +178,7 @@ nav.menu-open .hamburger-menu .bars::after {
     font-family: "Poppins", sans-serif;
     font-size: clamp(.9rem, 3vw, 1.1rem);
     font-weight: 400;
-    padding: 10px;
+    padding: .75rem;
     line-height: 1.5;
     border-radius: 10px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
@@ -253,9 +254,18 @@ nav.menu-open .hamburger-menu .bars::after {
         width: 90vw;
     }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 616px) {
+    .content h2,
+    .content p {
+        width: 75%;
+    }
     .img-container {
-        width: 95vw;
+        width: 80vw;
+    }
+}
+@media screen and (max-width: 330px) {
+    .btn {
+        margin-top: 1rem;
     }
 }
 @media screen and (max-width: 1180px) and (orientation: landscape) {
@@ -268,7 +278,7 @@ nav.menu-open .hamburger-menu .bars::after {
         margin-top: 1.25rem;
     }
     .img-container {
-        width: 60vw;
+        width: 55vw;
     }
 }
 @media screen and (prefers-color-scheme: dark) {
