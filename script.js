@@ -8,16 +8,17 @@ menu.addEventListener('click', toggleHamburgerMenu);
 
 // toggles the hamburger menu, along with disabling scroll when menu is open
 function toggleHamburgerMenu() {
-    const menuOpen = nav.classList.contains('menu-open');
-    
     nav.classList.toggle('menu-open');
     document.body.classList.toggle('no-scroll');
 
-    // prevents these elements from being focused, clicked, or read by screen readers
+    // holds the value of whether the menu is open or not in order for the relevant code to run
+    const menuOpen = nav.classList.contains('menu-open');
+
+    // disables the contents of main along with the logo if the hamburger menu is open
     main.inert = menuOpen;
     logo.inert = menuOpen;
 
-    // adds or removes the esc key event listener when the hamburger menu is open or closed
+    // adds or removes the event listener depending on wether the hamburger is open or not
     if (menuOpen) {
         document.addEventListener('keydown', escapeKeyPress);
     } else {
