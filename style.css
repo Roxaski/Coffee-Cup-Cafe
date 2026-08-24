@@ -78,7 +78,7 @@ nav {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 2.75rem;
+    top: 3.2rem;
     right: .75rem;
     width: auto;
     height: auto;
@@ -194,7 +194,6 @@ nav.menu-open .hamburger-menu .bars::after {
     right: 0;
     width: 45vw;
     max-width: 600px;
-    object-fit: contain;
 }
 .img-container img {
     display: block;
@@ -239,7 +238,7 @@ nav.menu-open .hamburger-menu .bars::after {
         display: flex;
     }
     .btn:hover {
-        background-color: none;
+        background-color: transparent;
     }
     .img-container {
         width: 85vw;
