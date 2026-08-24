@@ -60,7 +60,7 @@ nav {
 }
 .logo img {
     color: var(--clr-grey);
-    width: 70px;
+    width: 4.3rem;
     height: 100%;
 }
 .logo p {
@@ -95,7 +95,7 @@ nav {
 }
 .bars {
     position: relative;
-    height: 2.5px;
+    height: .15rem;
     width: 1.2rem;
     border-radius: 5px;
     background-color: var(--clr-grey);
@@ -112,10 +112,10 @@ nav {
     transition: transform 300ms ease;
 }
 .bars::before {
-    transform: translateY(-8px);
+    transform: translateY(-.5rem);
 }
 .bars::after {
-    transform: translateY(8px);
+    transform: translateY(.5rem);
 }
 nav.menu-open .hamburger-menu .bars {
     background-color: transparent;
@@ -174,7 +174,7 @@ nav.menu-open .hamburger-menu .bars::after {
 .grid-container .title::before {
     content: '';
     flex: 1;
-    height: 2.5px;
+    height: .15rem;
     background: var(--clr-darkGrey);
     margin-top: .5rem;
     max-width: 10rem;
@@ -182,7 +182,7 @@ nav.menu-open .hamburger-menu .bars::after {
 .grid-container .title::after {
     content: '';
     flex: 1;
-    height: 2.5px;
+    height: .15rem;
     background: var(--clr-darkGrey);
     margin-top: .5rem;
     max-width: 10rem;
@@ -206,7 +206,7 @@ nav.menu-open .hamburger-menu .bars::after {
     position: relative;
     width: 95%;
     text-transform: capitalize;
-    margin: 10px auto;
+    margin: .625rem auto;
 }
 .card .information::after {
     content: '';
@@ -233,7 +233,7 @@ nav.menu-open .hamburger-menu .bars::after {
     font-size: clamp(1rem, 3vw, 1rem);
     line-height: 1.4;
     width: 95%;
-    margin: 25px auto 10px;
+    margin: 1.5rem auto .625rem;
 }
 @media screen and (max-width: 1175px) {
     .no-scroll {
