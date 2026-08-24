@@ -254,7 +254,7 @@ nav.menu-open .hamburger-menu .bars::after {
         width: 90vw;
     }
 }
-@media screen and (max-width: 616px) {
+@media screen and (max-width: 675px) {
     .content h2,
     .content p {
         width: 75%;
