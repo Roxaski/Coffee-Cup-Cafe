@@ -199,7 +199,7 @@ lightboxImg.addEventListener('touchend', (e) => {
     // holds the value of whether the user was zooming in to help prevent the image from advancing
     const userZooming = imgZoom;
 
-    // if there no fingers on the screen then the variable is set to false
+    // if there are no fingers on the screen then the variable is set to false
     if (e.touches.length === 0) {
         imgZoom = false;
     };
