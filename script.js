@@ -18,11 +18,17 @@ function toggleHamburgerMenu() {
     main.inert = menuOpen;
     logo.inert = menuOpen;
 
-    // adds or removes the event listener depending on wether the hamburger is open or not
+    /*
+        adds or removes the event listener depending on whether the hamburger is open or not,
+        and sets the aria-expanded accordingly for screen reader users
+    */
+
     if (menuOpen) {
         document.addEventListener('keydown', escapeKeyPress);
+        menu.setAttribute('aria-expanded', 'true');
     } else {
         document.removeEventListener('keydown', escapeKeyPress);
+        menu.setAttribute('aria-expanded', 'false');
     };
 };
 
