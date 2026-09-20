@@ -26,7 +26,7 @@
     --clr-grey: #524e4e;
     --clr-darkGrey: #6b6767;
     --clr-lightGrey: #beb9b9;
-    --clr-brwn: #b27526;
+    --clr-brown: #b27526;
     --clr-darkBrown: #865340;
 }
 ::selection {
@@ -144,7 +144,7 @@ nav.menu-open .hamburger-menu .bars::after {
     -webkit-tap-highlight-color: transparent;
 }
 .links ul li a:hover {
-    color: var(--clr-brwn);
+    color: var(--clr-brown);
 }
 .grid-container {
     display: grid;
