@@ -162,6 +162,7 @@ nav.menu-open .hamburger-menu .bars::after {
     transform: translate(-50%, -50%);
     width: fit-content;
     height: auto;
+    touch-action: none;
     z-index: 3;
 }
 .lightbox-no-scroll {
