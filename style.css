@@ -241,7 +241,7 @@ nav.menu-open .hamburger-menu .bars::after {
         background-color: transparent;
     }
     .img-container {
-        width: 85vw;
+        width: 100vw;
     }
 }
 @media screen and (max-width: 875px) {
@@ -249,17 +249,11 @@ nav.menu-open .hamburger-menu .bars::after {
     .content p {
         width: 90%;
     }
-    .img-container {
-        width: 90vw;
-    }
 }
 @media screen and (max-width: 675px) {
     .content h2,
     .content p {
         width: 75%;
-    }
-    .img-container {
-        width: 80vw;
     }
 }
 @media screen and (max-width: 330px) {
