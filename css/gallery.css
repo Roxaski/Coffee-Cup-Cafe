@@ -223,6 +223,7 @@ nav.menu-open .hamburger-menu .bars::after {
     pointer-events: none;
     position: fixed;
     inset: 0;
+    touch-action: none;
     background: var(--clr-blk);
     z-index: 2;
 }
