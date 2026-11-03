@@ -19,9 +19,9 @@ const galleryImgArray = Array.from(galleryImgs);
 // sets the lightbox images src and srcset in order to provide the appropriate image
 function setLightboxImg() {
     const img = galleryImgArray[currentImg];
-    
-    lightboxImg.srcset = img.srcset;
     lightboxImg.src = img.src;
+    lightboxImg.srcset = img.srcset;
+    lightboxImg.alt = img.alt;
 };
 
 /*
@@ -39,9 +39,8 @@ function openLightBox(e) {
         currentImg = galleryImgArray.indexOf(e.target);
 
         setLightboxImg();
+        preloadAdjacentImgs();
         
-        // overlay transition is set here to stop firefox from causing a brief flash from happening
-        overlay.style.transition = 'opacity 150ms ease';
         overlay.classList.add('active');
         lightboxImg.classList.add('active');
 
@@ -76,17 +75,18 @@ function lightboxBtns() {
 
 // preloads the adjacent photos within the lightbox
 function preloadAdjacentImgs() {
+    const sizes="(max-width: 1175px) calc(100vw - 1.5rem), 65vw";
+
     if (currentImg > 0) {
-        preloadPreviousImg.sizes = lightboxImg.sizes;
+        preloadPreviousImg.sizes = sizes;
         preloadPreviousImg.srcset = galleryImgArray[currentImg - 1].srcset;
         preloadPreviousImg.src = galleryImgArray[currentImg - 1].src;
     };
 
     if (currentImg < galleryImgArray.length - 1) {
-        preloadNextImg.sizes = lightboxImg.sizes;
+        preloadNextImg.sizes = sizes;
         preloadNextImg.srcset = galleryImgArray[currentImg + 1].srcset;
         preloadNextImg.src = galleryImgArray[currentImg + 1].src;
-        
     };
 };
 
@@ -96,7 +96,6 @@ let btnTimer;
 // closes the lightbox, also resets values and remove classes
 function closeLightbox () {
     document.body.classList.remove('lightbox-no-scroll');
-    overlay.style.transition = 'none';
     overlay.classList.remove('active');
     lightboxImg.classList.remove('zoom');
     lightboxImg.style.transform = '';
@@ -105,6 +104,7 @@ function closeLightbox () {
     lightboxImg.classList.remove('active');
     lightboxImg.srcset = '';
     lightboxImg.src = '';
+    lightboxImg.alt = '';
     previousBtn.classList.remove('active');
     nextBtn.classList.remove('active');
 
@@ -116,6 +116,12 @@ function closeLightbox () {
     galleryImgArray.forEach(img => {
         img.setAttribute('tabIndex', 0);
     });
+
+    // checks if the user has a pointer device and if so then it adds focus onto the last image that it was on
+    if (window.matchMedia('(hover: hover)').matches) {
+        const img = galleryImgArray[currentImg];
+        img.focus();
+    };
 
     // clears the timeout when the lightbox is closed
     clearTimeout(btnTimer);
@@ -143,7 +149,6 @@ lightboxImg.addEventListener('dblclick', () => {
 // lightbox click event listeners for mouse
 gallery.addEventListener('click', (e) => {
     openLightBox(e);
-    preloadAdjacentImgs();
 });
 
 overlay.addEventListener('click', () => {
@@ -212,7 +217,6 @@ gallery.addEventListener('keydown', (e) => {
     if(e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openLightBox(e);
-        preloadAdjacentImgs();
     };
 });
 
@@ -224,27 +228,20 @@ let imgPositionX = 0;
 let imgPositionY = 0;
 let currentPositionX;
 let currentPositionY;
-let tapMovement = false;
 
 lightboxImg.addEventListener('touchstart', (e) => {
     // the position of the initial tap on the screen for both x and y axis
     screenTapStartX = e.touches[0].clientX;
     screenTapStartY = e.touches[0].clientY;
-
-    // sets the initial value of tap movement to false
-    tapMovement = false;
-
-    // adds a class to stop the image from having a transition while it's zoomed
-    lightboxImg.classList.add('drag');
 });
 
 lightboxImg.addEventListener('touchmove', (e) => {
-    // updates this to true if there's any finger movement
-    tapMovement = true;
-
     if(!lightboxImg.classList.contains('zoom')) {
         return;
     };
+
+    // adds a class to stop the image from having a transition while it's zoomed
+    lightboxImg.classList.add('drag');
 
     // gets the position of where the screen was tapped for both x and y axis
     currentPositionX = e.touches[0].clientX;
@@ -269,11 +266,8 @@ lightboxImg.addEventListener('touchend', (e) => {
     // stores the value of the current time in order to calculate the difference in between taps
     let currentTapTime = Date.now();
 
-    // tap movement is true the it sets the screen tap variable back to 0 in order to prevent tapping screen issues
-    if(tapMovement) {
-        screenTap = 0;
-    // checks if the difference in screen taps was equal to or less than 300 otherwise it just sets it to the current tap time
-    } else if (currentTapTime - screenTap <= 300) {
+    // checks if there's been 300 or less ms between taps, toggles zoom and sets the screen tap back to 0
+    if(currentTapTime - screenTap <= 300) {
         lightboxImg.classList.toggle('zoom');
         screenTap = 0;
     } else {

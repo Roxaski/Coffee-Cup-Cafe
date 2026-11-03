@@ -143,41 +143,38 @@ nav.menu-open .hamburger-menu .bars::after {
     padding: 1.5rem;
 }
 .gallery img {
-    display: block;
     width: 100%;
     height: auto;
-    color: var(--clr-blk);
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
-    contain: layout;
     aspect-ratio: 16 / 9;
     cursor: pointer;
 }
 .lightbox {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: fit-content;
-    height: auto;
+    width: 65vw;
+    height: 85vh;
     touch-action: none;
+    pointer-events: none;
     z-index: 3;
 }
 .lightbox-no-scroll {
     overflow: hidden;
+    pointer-events: auto;
 }
 .lightbox > img {
     display: none;
-    max-width: 90vw;
-    max-height: 85vh;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     aspect-ratio: 16 / 9;
-    user-select: none;
-    transition: transform 300ms ease-in-out;
     object-fit: contain;
+    user-select: none;
+    pointer-events: auto;
+    transition: transform 300ms ease-in-out;
     cursor: default;
 }
 .lightbox > img.active {
@@ -192,7 +189,6 @@ nav.menu-open .hamburger-menu .bars::after {
 .lightbox .btn {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     background: transparent;
     border: none;
     color: var(--clr-white);
@@ -209,27 +205,28 @@ nav.menu-open .hamburger-menu .bars::after {
     height: auto;
 }
 .lightbox .previous {
-    left: 0;
+    left: -6rem;
     transform: translateY(-50%);
-    margin-left: -5rem;
 }
 .lightbox .next {
-    right: 0;
+    right: -6rem;
     transform: translateY(-50%);
-    margin-right: -5rem;
 }
 .overlay {
     opacity: 0;
-    pointer-events: none;
     position: fixed;
+    pointer-events: none;
     inset: 0;
-    touch-action: none;
+    width: 100%;
+    height: 100%;
     background: var(--clr-blk);
+    touch-action: none;
     z-index: 2;
 }
 .overlay.active {
     opacity: 1;
     pointer-events: auto;
+    transition: opacity 150ms ease;
 }
 @media (hover: hover) {
     .lightbox > img.zoom {
@@ -278,6 +275,10 @@ nav.menu-open .hamburger-menu .bars::after {
     .hamburger-menu {
         display: flex;
     }
+    .lightbox {
+        width: calc(100vw - 1.5rem);
+        height: auto;
+    }
 }
 @media screen and (max-width: 765px) {
     .gallery {
@@ -295,6 +296,8 @@ nav.menu-open .hamburger-menu .bars::after {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: calc(95dvh * 16 / 9);
+        max-width: calc(100vw - 1.5rem);
         height: auto;
     }
 }
@@ -329,6 +332,15 @@ nav.menu-open .hamburger-menu .bars::after {
     }
     .bars::before,
     .bars::after {
+        transition: none;
+    }
+    .lightbox > img {
+        transition: none;
+    }
+    .overlay {
+        transition: none;
+    }
+    .overlay.active {
         transition: none;
     }
 }
