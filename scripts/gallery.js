@@ -233,7 +233,11 @@ lightboxImg.addEventListener('touchstart', (e) => {
     // the position of the initial tap on the screen for both x and y axis
     screenTapStartX = e.touches[0].clientX;
     screenTapStartY = e.touches[0].clientY;
-});
+    /*
+        added passive true get better touch performance by allowing for smoother scrolling,
+        this tells the browser that preventDefault() won't be called which allows touch movements to happen faster
+    */
+}, { passive: true });
 
 lightboxImg.addEventListener('touchmove', (e) => {
     if(!lightboxImg.classList.contains('zoom')) {
@@ -253,7 +257,7 @@ lightboxImg.addEventListener('touchmove', (e) => {
 
     // sets transform and scale onto the lightbox image by calculating the position of the image plus how much it's moved from it's position
     lightboxImg.style.transform = `translate(${imgPositionX + imgMovementX}px, ${imgPositionY + imgMovementY}px) scale(2)`;
-});
+}, { passive: true });
 
 lightboxImg.addEventListener('touchend', (e) => {
     // removes the drag class to allow the image to transition while it's zoomed
