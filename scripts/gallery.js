@@ -234,6 +234,12 @@ lightboxImg.addEventListener('touchstart', (e) => {
     // the position of the initial tap on the screen for both x and y axis
     screenTapStartX = e.touches[0].clientX;
     screenTapStartY = e.touches[0].clientY;
+
+    // checks if the image is zoomed, and adds the drag class once at the start of touch
+    if(lightboxImg.classList.contains('zoom')) {
+        lightboxImg.classList.add('drag');
+    };
+
     /*
         added passive : true to try and get better touch performance by allowing for smoother scrolling,
         as this tells the browser that preventDefault() won't be called which allows touch movements to happen faster in the code
@@ -255,8 +261,6 @@ lightboxImg.addEventListener('touchmove', (e) => {
     // checks if an animation is scheduled
     if (!animationScheduled) {
         animationFrameID = window.requestAnimationFrame(() => {
-            // adds a class to stop the image from having a transition while it's zoomed
-            lightboxImg.classList.add('drag');
 
             /*
                 stores the value of how much the image moved, by calculating the current position of x and y,
@@ -269,7 +273,7 @@ lightboxImg.addEventListener('touchmove', (e) => {
                 sets transform and scale onto the lightbox image by calculating the position of the image,
                 plus how much it's moved from it's position
             */
-            lightboxImg.style.transform = `translate(${imgPositionX + imgMovementX}px, ${imgPositionY + imgMovementY}px) scale(2)`;
+            lightboxImg.style.transform = `translate(${imgPositionX + imgMovementX}px, ${imgPositionY + imgMovementY}px) scale(1.5)`;
             
             animationScheduled = false;
         });
@@ -291,8 +295,8 @@ lightboxImg.addEventListener('touchend', (e) => {
     imgPositionX = imgPositionX + (e.changedTouches[0].clientX - screenTapStartX);
     imgPositionY = imgPositionY + (e.changedTouches[0].clientY - screenTapStartY);
 
-    // stores the value of the current time in order to calculate the difference in between taps
-    let currentTapTime = Date.now();
+    // stores the value of the current time (milliseconds) in order to calculate the difference in between taps
+    let currentTapTime = performance.now();
 
     /*
         checks if there's been 300 or less ms between taps,
@@ -308,10 +312,10 @@ lightboxImg.addEventListener('touchend', (e) => {
         screenTap = currentTapTime;
     };
 
-    // if the image isn't zoomed in then sets the transform to an empty string to remove scale(2), else it just returns early
+    // if the image isn't zoomed in then sets the transform to an empty string to remove scale(1.5), else it just returns early
     if(!lightboxImg.classList.contains('zoom')) {
         lightboxImg.style.transform = '';
-        // resets the position of the image so that the next zoom starts centred
+        // resets the position of the image so that the next zoom starts centered
         imgPositionX = 0;
         imgPositionY = 0;
     }
