@@ -19,6 +19,7 @@ const galleryImgArray = Array.from(galleryImgs);
 // sets the lightbox images src and srcset in order to provide the appropriate image
 function setLightboxImg() {
     const img = galleryImgArray[currentImg];
+    
     lightboxImg.src = img.src;
     lightboxImg.srcset = img.srcset;
     lightboxImg.alt = img.alt;
@@ -234,32 +235,55 @@ lightboxImg.addEventListener('touchstart', (e) => {
     screenTapStartX = e.touches[0].clientX;
     screenTapStartY = e.touches[0].clientY;
     /*
-        added passive true get better touch performance by allowing for smoother scrolling,
-        this tells the browser that preventDefault() won't be called which allows touch movements to happen faster
+        added passive : true to try and get better touch performance by allowing for smoother scrolling,
+        as this tells the browser that preventDefault() won't be called which allows touch movements to happen faster in the code
     */
 }, { passive: true });
+
+let animationScheduled = false;
+let animationFrameID;
 
 lightboxImg.addEventListener('touchmove', (e) => {
     if(!lightboxImg.classList.contains('zoom')) {
         return;
     };
 
-    // adds a class to stop the image from having a transition while it's zoomed
-    lightboxImg.classList.add('drag');
-
     // gets the position of where the screen was tapped for both x and y axis
     currentPositionX = e.touches[0].clientX;
     currentPositionY = e.touches[0].clientY;
 
-    // stores the value of how much the image moved, by calculating the current position of x and y minus where the screen was initially tapped
-    let imgMovementX = currentPositionX - screenTapStartX;
-    let imgMovementY = currentPositionY - screenTapStartY;
+    // checks if an animation is scheduled
+    if (!animationScheduled) {
+        animationFrameID = window.requestAnimationFrame(() => {
+            // adds a class to stop the image from having a transition while it's zoomed
+            lightboxImg.classList.add('drag');
 
-    // sets transform and scale onto the lightbox image by calculating the position of the image plus how much it's moved from it's position
-    lightboxImg.style.transform = `translate(${imgPositionX + imgMovementX}px, ${imgPositionY + imgMovementY}px) scale(2)`;
+            /*
+                stores the value of how much the image moved, by calculating the current position of x and y,
+                minus where the screen was initially tapped
+            */ 
+            let imgMovementX = currentPositionX - screenTapStartX;
+            let imgMovementY = currentPositionY - screenTapStartY;
+
+            /*
+                sets transform and scale onto the lightbox image by calculating the position of the image,
+                plus how much it's moved from it's position
+            */
+            lightboxImg.style.transform = `translate(${imgPositionX + imgMovementX}px, ${imgPositionY + imgMovementY}px) scale(2)`;
+            
+            animationScheduled = false;
+        });
+        animationScheduled = true;
+    };
 }, { passive: true });
 
 lightboxImg.addEventListener('touchend', (e) => {
+    // cancels the requested animation frame on touchend
+    cancelAnimationFrame(animationFrameID);
+
+    // sets the schedule animation back to false
+    animationScheduled = false;
+
     // removes the drag class to allow the image to transition while it's zoomed
     lightboxImg.classList.remove('drag');
 
@@ -270,8 +294,14 @@ lightboxImg.addEventListener('touchend', (e) => {
     // stores the value of the current time in order to calculate the difference in between taps
     let currentTapTime = Date.now();
 
-    // checks if there's been 300 or less ms between taps, toggles zoom and sets the screen tap back to 0
+    /*
+        checks if there's been 300 or less ms between taps,
+        prevents default behaviour in order to fix an issue with the dblclick listener also toggling zoom,
+        since touch end gets read first it then caused the toggle to happen twice which cancelled each other out,
+        toggles zoom and sets the screen tap back to zero
+    */ 
     if(currentTapTime - screenTap <= 300) {
+        e.preventDefault();
         lightboxImg.classList.toggle('zoom');
         screenTap = 0;
     } else {
